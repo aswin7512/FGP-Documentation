@@ -1,0 +1,314 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+
+\title[Financial Goal Planner]{Financial Goal Planner: An AI-Driven Goal-Based Investment Planning and Risk-Aware Recommendation System}
+\author[Group 5]{Amarthya Regimon Joseph \and Aswin P \and Athira Raj \and Haleema S}
+\institute{Department of Computer Science and Engineering \\ CAPE College of Engineering Alappuzha \\ \vspace{0.3cm} \small \textbf{Under the guidance of:} \\ Mr. Siju Koshy \\ \footnotesize Department of Computer Science and Engineering}
+\date{\today}
+
+\begin{document}
+
+% ---------- Title ----------
+\begin{frame}
+\titlepage
+\end{frame}
+
+% ---------- Contents ----------
+\begin{frame}{Contents}
+\tableofcontents
+\end{frame}
+
+% ================= ABSTRACT =================
+\section{Abstract}
+
+\begin{frame}{Abstract}
+\small
+Individuals often struggle to plan investments for goals such as retirement, education, or vehicle purchases because the required savings, investment period, and risk level vary with the goal’s timeline. Existing goal-based planning tools typically use fixed risk categories and do not adapt to changing market conditions or the time remaining to achieve the goal.
+
+\medskip
+This project proposes a \textbf{mobile application} that recommends personalized savings plans and investment allocations across mutual funds, equity, and debt instruments based on a user's financial goal, horizon, and risk profile. The recommendation engine is inspired by \emph{``Regret-Optimized Portfolio Enhancement through Deep Reinforcement Learning and Future Looking Rewards''}, adapting its regret-based and future-looking reward formulation to dynamically adjust asset allocation as a goal's deadline approaches, rather than relying on a fixed glide path.
+
+\medskip
+The system aims to provide adaptive, risk-aware, and horizon-sensitive investment guidance through a mobile-first interface.
+\end{frame}
+
+% ================= LITERATURE REVIEW =================
+\section{Literature Review}
+
+\begin{frame}{Literature Review (1/12)}
+\tiny
+\resizebox{\linewidth}{!}{\begin{tabular}{p{0.06\textwidth} p{0.03\textwidth} p{0.22\textwidth} p{0.62\textwidth}}
+\toprule
+\textbf{S.No} & \textbf{Year} & \textbf{Title} & \textbf{Abstract (Relation to Base Paper) \& Methodology} \\
+\midrule
+1 & 2025 & AI-Driven Goal Based Financial Planning System: A Framework for Contextual Feasibility Validation &
+\textbf{Relation:} Directly aligned with our project's goal-based framing; models income, expenditure, savings, risk and market dynamics together, but does not use regret/future-looking reward shaping like the base paper. \newline
+\textbf{Methodology:} Combines ML-based time-series forecasting for financial predictions with reinforcement learning for investment strategy optimization, and probabilistic modeling for feasibility validation. \\
+\addlinespace
+2 & 2024 & AI-driven robo-advisors on personal financial management and investment strategies &
+\textbf{Relation:} Establishes the general case for AI-driven personalized investment advice that our app builds on, but uses no RL-based reward design. \newline
+\textbf{Methodology:} Conceptual/survey-style analysis of how robo-advisors use algorithms and ML on market and client data to create tailored, automated investment plans. \\
+\bottomrule
+\end{tabular}}
+\end{frame}
+
+\begin{frame}{Literature Review (2/12)}
+\tiny
+\resizebox{\linewidth}{!}{\begin{tabular}{p{0.06\textwidth} p{0.03\textwidth} p{0.22\textwidth} p{0.62\textwidth}}
+\toprule
+\textbf{S.No} & \textbf{Year} & \textbf{Title} & \textbf{Abstract (Relation to Base Paper) \& Methodology} \\
+\midrule
+3 & 2025* & AI Revolution in Wealth Management: Applications and Horizons &
+\textbf{Relation:} Provides industry-level context on AI adoption in wealth management, motivating the case for an AI-driven planning app, though not a DRL-based technical contribution. \newline
+\textbf{Methodology:} Industry-perspective review discussing AI applications (compliance automation, personalization, back-office automation) in wealth management. \\
+\addlinespace
+4 & 2024 & A Multifaceted Approach to Stock Market Trading Using Reinforcement Learning &
+\textbf{Relation:} Shares the RL-for-finance foundation with the base paper, but focuses on multi-stock trading rather than goal-based portfolio allocation. \newline
+\textbf{Methodology:} Uses Advantage Actor-Critic (A2C) and Deep Deterministic Policy Gradient (DDPG) with a novel risk-aware reward (PSR) combining technical and fundamental indicators; validated on 30 Dow Jones stocks. \\
+\bottomrule
+\end{tabular}}
+\end{frame}
+
+\begin{frame}{Literature Review (3/12)}
+\tiny
+\resizebox{\linewidth}{!}{\begin{tabular}{p{0.06\textwidth} p{0.03\textwidth} p{0.22\textwidth} p{0.62\textwidth}}
+\toprule
+\textbf{S.No} & \textbf{Year} & \textbf{Title} & \textbf{Abstract (Relation to Base Paper) \& Methodology} \\
+\midrule
+5 & 2025 & A Novel RMS-Driven Deep Reinforcement Learning for Optimized Portfolio Management in Stock Trading &
+\textbf{Relation:} Closely related to the base paper's risk-aware reward design philosophy -- both incorporate drawdown-based rewards, though this paper adds sentiment rather than regret/future-looking terms. \newline
+\textbf{Methodology:} Proposes PPO\_RMS, A2C\_RMS, and DDPG\_RMS models combining earnings-report data, Max Drawdown-based rewards, and sentiment indicators (RMS); DDPG\_RMS outperforms the DJI benchmark. \\
+\addlinespace
+6 & 2025 & Complex forecasting and investment strategy optimization via chain-of-thought of large language models &
+\textbf{Relation:} Explores an alternative (LLM-based) path to investment decision-making, contrasting with the base paper's RL-based approach; useful for comparing reasoning-driven vs. reward-driven strategies. \newline
+\textbf{Methodology:} Applies chain-of-thought (CoT) prompting with ChatGPT-4.0 on anonymized financial statements of 608 Chinese A-share firms (2010--2023) to predict earnings direction and backtest a trading strategy. \\
+\bottomrule
+\end{tabular}}
+\end{frame}
+
+\begin{frame}{Literature Review (4/12)}
+\tiny
+\resizebox{\linewidth}{!}{\begin{tabular}{p{0.06\textwidth} p{0.03\textwidth} p{0.22\textwidth} p{0.62\textwidth}}
+\toprule
+\textbf{S.No} & \textbf{Year} & \textbf{Title} & \textbf{Abstract (Relation to Base Paper) \& Methodology} \\
+\midrule
+7 & 2020 & Detecting and adapting to crisis pattern with context based Deep Reinforcement Learning &
+\textbf{Relation:} An alternative robustness strategy to the base paper -- uses contextual macro features instead of regret/future-looking reward shaping to handle adverse market regimes. \newline
+\textbf{Methodology:} Two sub-network DRL architecture; one network processes past strategy performance/volatility, the other processes macro-context features (risk aversion, economic surprise index, cross-asset correlation), with adversarial training for robustness. \\
+\addlinespace
+8 & 2024* & Effectiveness of SIP Investment Among Retail Investors in Jharkhand: A Survey-based Study &
+\textbf{Relation:} Grounds our project's Indian retail-investor context and validates SIP as the primary savings vehicle our app should recommend for goal-based plans. \newline
+\textbf{Methodology:} Primary survey-based study assessing awareness, adoption, and perceived effectiveness of Systematic Investment Plans (SIPs) among retail investors in the Jharkhand region. \\
+\bottomrule
+\end{tabular}}
+\end{frame}
+
+\begin{frame}{Literature Review (5/12)}
+\tiny
+\resizebox{\linewidth}{!}{\begin{tabular}{p{0.06\textwidth} p{0.03\textwidth} p{0.22\textwidth} p{0.62\textwidth}}
+\toprule
+\textbf{S.No} & \textbf{Year} & \textbf{Title} & \textbf{Abstract (Relation to Base Paper) \& Methodology} \\
+\midrule
+9 & 2024* & Exploring the potential of AI in personal financial planning and advisory services &
+\textbf{Relation:} Supports the motivation for our app's AI-driven advisory features (automation, predictive analytics, risk profiling), though it is a conceptual/industry piece rather than a DRL contribution. \newline
+\textbf{Methodology:} Discussion-style analysis of AI use cases (automation, predictive analytics, risk assessment) in personal financial planning and advisory workflows. \\
+\addlinespace
+10 & 2023 & Forecasting inflation using disaggregates and machine learning &
+\textbf{Relation:} Relevant to our goal-cost projection module -- our app must inflate future goal costs (e.g. education, car price) accurately, and this paper's ML forecasting approach can inform that sub-module. \newline
+\textbf{Methodology:} Aggregates disaggregated (bottom-up) inflation forecasts using linear and nonlinear ML models, applied to Brazilian inflation data, and compares against direct aggregate forecasting. \\
+\bottomrule
+\end{tabular}}
+\end{frame}
+
+\begin{frame}{Literature Review (6/12)}
+\tiny
+\resizebox{\linewidth}{!}{\begin{tabular}{p{0.06\textwidth} p{0.03\textwidth} p{0.22\textwidth} p{0.62\textwidth}}
+\toprule
+\textbf{S.No} & \textbf{Year} & \textbf{Title} & \textbf{Abstract (Relation to Base Paper) \& Methodology} \\
+\midrule
+11 & 2025 & From Time Series to Images: A GAF-ResNet-LSTM Framework for Asset Selection and Portfolio Optimization &
+\textbf{Relation:} An alternative deep-learning approach (image-based) to asset selection that could complement our recommendation engine's fund-selection stage, contrasting with the base paper's pure RL approach. \newline
+\textbf{Methodology:} Converts price sequences into Gramian Angular Field (GAF) images, extracts spatial features via ResNet and temporal features via LSTM, then applies nested clustered optimization (NCO); validated on NIFTY 50 constituents. \\
+\addlinespace
+12 & 2025 & Hybrid LSTM and PPO Networks for Dynamic Portfolio Optimization &
+\textbf{Relation:} Directly extends the base paper's PPO approach with a forecasting layer -- a natural reference for a possible future enhancement to our recommendation engine. \newline
+\textbf{Methodology:} Combines an LSTM forecasting sub-module with a PPO-based allocation agent so decisions are informed by learned temporal price patterns. \\
+\bottomrule
+\end{tabular}}
+\end{frame}
+
+\begin{frame}{Literature Review (7/12)}
+\tiny
+\resizebox{\linewidth}{!}{\begin{tabular}{p{0.06\textwidth} p{0.03\textwidth} p{0.22\textwidth} p{0.62\textwidth}}
+\toprule
+\textbf{S.No} & \textbf{Year} & \textbf{Title} & \textbf{Abstract (Relation to Base Paper) \& Methodology} \\
+\midrule
+13 & 2024 & Machine learning in budget forecasting for corporate finance: A conceptual model for improving financial planning &
+\textbf{Relation:} While corporate-focused, the proposed ML-driven forecasting architecture is conceptually transferable to our app's personal budget/savings-capacity forecasting module. \newline
+\textbf{Methodology:} Conceptual model integrating regression, time-series analysis, and neural networks into a budget forecasting architecture for corporate financial planning. \\
+\addlinespace
+14 & 2025 & Parallel and Multi-Stage Knowledge Graph Retrieval for Behaviorally Aligned Financial Asset Recommendations &
+\textbf{Relation:} Closely relevant to our app's recommendation engine design -- shows how to align recommendations with investor behavior, complementing the base paper's reward-based personalization. \newline
+\textbf{Methodology:} Knowledge-graph-based retrieval system evaluated on the FAR-Trans dataset, using strict temporal cutoffs to avoid data leakage when generating behaviorally-aligned asset recommendations. \\
+\bottomrule
+\end{tabular}}
+\end{frame}
+
+\begin{frame}{Literature Review (8/12)}
+\tiny
+\resizebox{\linewidth}{!}{\begin{tabular}{p{0.06\textwidth} p{0.03\textwidth} p{0.22\textwidth} p{0.62\textwidth}}
+\toprule
+\textbf{S.No} & \textbf{Year} & \textbf{Title} & \textbf{Abstract (Relation to Base Paper) \& Methodology} \\
+\midrule
+15 & 2025 & Regret-
+Optimized Portfolio En-hancement through Deep Reinforcement Learning and Future Looking Rewards &
+\textbf{Relation:} This is the base paper – our project directly adapts its regret-optimized, future-looking reward formulation for goal-based, horizon-sensitive asset allocation. \newline
+\textbf{Methodology:} PPO-based DRL framework for dynamic portfolio rebalancing using a regret-based reward (relative to a 60/40 benchmark) combined with a future-looking (forward-horizon) reward component; evaluated via Sharpe ratio and maximum drawdown. \\
+\addlinespace
+16 & 2025 & Risk-Aware Deep Reinforcement Learning for Dynamic Portfolio Optimization &
+\textbf{Relation:} Closest methodological sibling to the base paper -- both use PPO with risk-sensitive rewards, useful for comparing regret-based vs. Sharpe-based reward design in our engine. \newline
+\textbf{Methodology:} Integrates a Sharpe-ratio-based reward with direct risk controls (maximum drawdown, volatility constraints), trained using PPO; benchmarked against mean-variance and equal-weighted portfolios. \\
+\bottomrule
+\end{tabular}}
+\end{frame}
+
+\begin{frame}{Literature Review (9/12)}
+\tiny
+\resizebox{\linewidth}{!}{\begin{tabular}{p{0.06\textwidth} p{0.03\textwidth} p{0.22\textwidth} p{0.62\textwidth}}
+\toprule
+\textbf{S.No} & \textbf{Year} & \textbf{Title} & \textbf{Abstract (Relation to Base Paper) \& Methodology} \\
+\midrule
+17 & 2024 & Robo Advising and Investor Profiling &
+\textbf{Relation:} Directly relevant to our risk-profiling module -- proposes an objective, quantifiable risk measure that our app's questionnaire-based profiling could adopt instead of vague risk buckets. \newline
+\textbf{Methodology:} Introduces an investor profiling method based solely on Relative Risk Aversion (RRA), deriving optimal allocations and comparing them against real robo-advisor (Riskalyze) portfolios for conservative, moderate, and aggressive profiles. \\
+\addlinespace
+18 & 2026 & Robo-advisors in financial services: Redefining wealth management in the age of artificial intelligence &
+\textbf{Relation:} Provides a structured typology of robo-advisor institutional forms, useful for positioning our app's design choices within the broader robo-advisory landscape. \newline
+\textbf{Methodology:} Conceptual model (grounded in Dubin's theory-building framework) categorizing robo-advisors into Wealth Management Firm, Regulatory, and Personal types, linking institutional design to return maximization, risk minimization, and financial inclusion outcomes. \\
+\bottomrule
+\end{tabular}}
+\end{frame}
+
+\begin{frame}{Literature Review (10/12)}
+\tiny
+\resizebox{\linewidth}{!}{\begin{tabular}{p{0.06\textwidth} p{0.03\textwidth} p{0.22\textwidth} p{0.62\textwidth}}
+\toprule
+\textbf{S.No} & \textbf{Year} & \textbf{Title} & \textbf{Abstract (Relation to Base Paper) \& Methodology} \\
+\midrule
+19 & 2025 & Scoring the Ethics of AI Robo-Advice: Why We Need Gateways and Ratings &
+\textbf{Relation:} Important for our project's ethical/regulatory considerations -- highlights trust and transparency issues our app must address when recommending investment allocations. \newline
+\textbf{Methodology:} Proposes a regulatory framework requiring robo-advisors to clear four licensing gateways for an AI Robo-Advice License (AIRAL), followed by ongoing ethical-compliance monitoring via a balanced scorecard rating. \\
+\addlinespace
+20 & 2025 & Sentiment-Aware Portfolio Optimization: CVaR-Based Diversification With Deep Reinforcement Learning &
+\textbf{Relation:} Shares the risk-control philosophy of the base paper (CVaR vs. regret) and shows how sentiment can be incorporated into the state space, a possible future extension for our engine. \newline
+\textbf{Methodology:} Uses DDPG to dynamically adjust allocations under Conditional Value-at-Risk (CVaR) constraints while incorporating FinBERT-derived sentiment scores into the state representation, accounting for transaction costs. \\
+\bottomrule
+\end{tabular}}
+\end{frame}
+
+\begin{frame}{Literature Review (11/12)}
+\tiny
+\resizebox{\linewidth}{!}{\begin{tabular}{p{0.06\textwidth} p{0.03\textwidth} p{0.22\textwidth} p{0.62\textwidth}}
+\toprule
+\textbf{S.No} & \textbf{Year} & \textbf{Title} & \textbf{Abstract (Relation to Base Paper) \& Methodology} \\
+\midrule
+21 & 2025 & Simul-RL Portfolio Framework: Black-Scholes-Merton and Reinforcement Learning for Asset Allocation &
+\textbf{Relation:} Addresses a limitation relevant to our project -- limited historical data for personal goal scenarios -- by showing how simulated data can augment RL training, unlike the base paper which relies on historical market data alone. \newline
+\textbf{Methodology:} Uses Monte Carlo simulation data (grounded in the Black-Scholes-Merton model) to increase training data complexity and diversity for an RL-based asset allocation agent, addressing overfitting and limited statistical structure in real data. \\
+\addlinespace
+22 & 2024/25* & The Impact of the Digital Economy on Investment Portfolio Management in the Stock Market &
+\textbf{Relation:} Provides macro-level context on how digital transformation is reshaping portfolio management practices, motivating our project's digital-first (mobile app) approach. \newline
+\textbf{Methodology:} Empirical/analytical study examining how digital economy indicators relate to investment portfolio management and investor behavior in stock markets. \\
+\bottomrule
+\end{tabular}}
+\end{frame}
+
+\begin{frame}{Literature Review (12/12)}
+\tiny
+\resizebox{\linewidth}{!}{\begin{tabular}{p{0.06\textwidth} p{0.03\textwidth} p{0.22\textwidth} p{0.62\textwidth}}
+\toprule
+\textbf{S.No} & \textbf{Year} & \textbf{Title} & \textbf{Abstract (Relation to Base Paper) \& Methodology} \\
+\midrule
+23 & 2020 & The role of robo-advisors in behavioural finance, shaping investment decisions &
+\textbf{Relation:} Relevant to our app's UX and risk-communication design -- highlights behavioral biases robo-advisors must account for, complementing the base paper's purely quantitative reward design. \newline
+\textbf{Methodology:} Longitudinal case study examining robo-advisors through the lens of behavioural finance and their role in shaping investors' financial decision-making processes. \\
+\addlinespace
+24 & 2024 & Uncertainty-Aware Reinforcement Learning for Portfolio Optimization &
+\textbf{Relation:} Extends the base paper's risk-awareness with explicit uncertainty quantification (Bayesian forecasting), a potential enhancement for our engine's confidence-aware recommendations. \newline
+\textbf{Methodology:} Proposes the Uncertainty-Aware Markov Decision Process (UAMDP), coupling Bayesian forecasting, posterior-sampling RL (Thompson sampling), and CVaR-constrained planning; improves Sharpe ratio and roughly halves maximum drawdown vs. baselines. \\
+\bottomrule
+\end{tabular}}
+\end{frame}
+
+% ================= RESEARCH GAP =================
+\section{Research Gap}
+
+\begin{frame}{Research Gap}
+\small
+\begin{itemize}
+    \item \textbf{Robo-advisory and AI financial planning literature} (papers 1--3, 8, 9, 17--19, 23) covers general AI-driven advisory concepts, investor profiling, ethics, and Indian SIP adoption -- but none integrate a \emph{dynamic, reward-shaped} recommendation engine tied to a specific goal's remaining time horizon.
+    \item \textbf{No existing system combines:}
+    \begin{enumerate}
+        \item Goal-based horizon-aware planning (amount, deadline, inflation-adjusted target),
+        \item A mobile-first, India-relevant recommendation engine spanning mutual funds, equity, and debt instruments.
+    \end{enumerate}
+    \item \textbf{This project's contribution:} bridging goal-based financial planning with regret-based, future-looking DRL reward shaping in a single mobile recommendation system.
+\end{itemize}
+\end{frame}
+
+% ================= PROBLEM STATEMENT =================
+\section{Problem Statement}
+
+\begin{frame}{Problem Statement}
+\small
+Individuals planning for financial goals -- such as retirement, a child's education, or purchasing a vehicle -- face difficulty determining \textbf{how much to save, for how long, and where to invest}, because the appropriate level of investment risk depends heavily on the goal's remaining time horizon.
+
+\medskip
+There is a need for a system that dynamically adjusts investment recommendations based on both the \textbf{time remaining to a goal} and \textbf{prevailing market conditions}, rather than relying on fixed, one-time risk classifications.
+\end{frame}
+
+% ================= OBJECTIVE =================
+\section{Objectives}
+
+\begin{frame}{Objectives}
+\begin{enumerate}
+    \item To design a mobile application that allows users to define financial goals with a target amount and time horizon (e.g. retirement, education, vehicle purchase).
+    \item To develop a risk-profiling module that assesses both risk tolerance and risk capacity based on the user's goal horizon and financial situation.
+    \item To build a recommendation engine -- inspired by the base paper's regret-optimized, future-looking reward formulation -- that dynamically adjusts asset allocation across mutual funds, equity, and debt instruments as the goal's deadline approaches.
+    \item To provide an intuitive mobile dashboard for tracking goal progress, required SIP contributions, and recommended portfolio adjustments over time.
+\end{enumerate}
+\end{frame}
+
+% ================= CONCLUSION =================
+\section{Conclusion}
+
+\begin{frame}{Conclusion}
+\small
+\begin{itemize}
+    \item Existing goal-based financial planning tools rely on static, rule-based risk assessment that does not adapt to a goal's remaining time horizon or evolving market conditions.
+    \item The reviewed literature demonstrates strong individual advances in robo-advisory design, and behavioral/ethical considerations -- but no single system unifies these for \textbf{personal, goal-based} investment planning.
+    \item This project proposes a mobile application that adapts the base paper's regret-optimized, future-looking reward mechanism to recommend dynamic investment allocations for individual financial goals.
+    \item This zeroth review establishes the problem statement, objectives, and literature foundation; subsequent phases will focus on system design, the recommendation engine's implementation, and evaluation against benchmark strategies.
+\end{itemize}
+\end{frame}
+
+% ================= REFERENCES =================
+\section{References}
+
+\begin{frame}[allowframebreaks]{References}
+    \nocite{*}
+    \bibliographystyle{plain}
+    \bibliography{references}
+\end{frame}
+
+\begin{frame}
+\centering
+\Huge Thank You
+\end{frame}
+
+\end{document}

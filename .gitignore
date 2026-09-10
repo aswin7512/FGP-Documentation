@@ -1,0 +1,50 @@
+# Core LaTeX auxiliary files
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+*.nav
+*.snm
+
+# Bibliography and glossary files
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.ist
+*.acn
+*.acr
+*.alg
+
+# Build tools (latexmk, rubber, etc.)
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
+# Output files (Remove *.pdf if you WANT to track the final output)
+*.dvi
+*.ps
+
+# Editor/OS specific
+.DS_Store
+*.swp
+*.bak
+*.sav
+.vscode/
