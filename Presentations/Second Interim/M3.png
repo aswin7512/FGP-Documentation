@@ -1,0 +1,79 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="PedkWnf2_48FIXYseqlL">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="8Y7v682s52VOGM7Z85q4-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;h2&gt;Risk Profiling &amp;amp; User Modelling Module&lt;/h2&gt;" vertex="1">
+          <mxGeometry height="30" width="370" x="240" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="8Y7v682s52VOGM7Z85q4-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="520" width="640" x="120" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="8Y7v682s52VOGM7Z85q4-3" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Actor" vertex="1">
+          <mxGeometry height="70" width="45" x="20" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="8Y7v682s52VOGM7Z85q4-4" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;" value="Fill Risk Questionnaire" vertex="1">
+          <mxGeometry height="50" width="170" x="355" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="8Y7v682s52VOGM7Z85q4-11" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;" value="Assess Risk Capacity" vertex="1">
+          <mxGeometry height="50" width="170" x="525" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="8Y7v682s52VOGM7Z85q4-12" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;" value="Assess Risk Tolerance" vertex="1">
+          <mxGeometry height="50" width="170" x="185" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="8Y7v682s52VOGM7Z85q4-13" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;" value="Classify Risk Profile" vertex="1">
+          <mxGeometry height="50" width="170" x="355" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="8Y7v682s52VOGM7Z85q4-14" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;" value="Update Financial Profile" vertex="1">
+          <mxGeometry height="50" width="170" x="535" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="8Y7v682s52VOGM7Z85q4-15" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;" value="View Risk Profile Result" vertex="1">
+          <mxGeometry height="50" width="170" x="195" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="8Y7v682s52VOGM7Z85q4-16" edge="1" parent="1" source="8Y7v682s52VOGM7Z85q4-15" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="8Y7v682s52VOGM7Z85q4-14" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="60" y="570" />
+            </Array>
+            <mxPoint x="430" y="550" as="sourcePoint" />
+            <mxPoint x="480" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8Y7v682s52VOGM7Z85q4-17" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="8Y7v682s52VOGM7Z85q4-4" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="60" y="570" as="sourcePoint" />
+            <mxPoint x="480" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8Y7v682s52VOGM7Z85q4-18" edge="1" parent="1" source="8Y7v682s52VOGM7Z85q4-4" style="endArrow=classic;html=1;rounded=0;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="8Y7v682s52VOGM7Z85q4-13" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="830" as="sourcePoint" />
+            <mxPoint x="430" y="830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8Y7v682s52VOGM7Z85q4-19" connectable="0" parent="8Y7v682s52VOGM7Z85q4-18" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" vertex="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8Y7v682s52VOGM7Z85q4-22" edge="1" parent="1" source="8Y7v682s52VOGM7Z85q4-13" style="endArrow=classic;html=1;rounded=0;dashed=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="8Y7v682s52VOGM7Z85q4-12" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="820" as="sourcePoint" />
+            <mxPoint x="800" y="820" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8Y7v682s52VOGM7Z85q4-23" connectable="0" parent="8Y7v682s52VOGM7Z85q4-22" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" vertex="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8Y7v682s52VOGM7Z85q4-24" edge="1" parent="1" source="8Y7v682s52VOGM7Z85q4-13" style="endArrow=classic;html=1;rounded=0;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="8Y7v682s52VOGM7Z85q4-11" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="860" as="sourcePoint" />
+            <mxPoint x="680" y="860" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8Y7v682s52VOGM7Z85q4-25" connectable="0" parent="8Y7v682s52VOGM7Z85q4-24" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" vertex="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
