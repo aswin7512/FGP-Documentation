@@ -1,6 +1,6 @@
 \documentclass{beamer}
 \usetheme{Madrid}
-
+\usepackage{array}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
@@ -58,52 +58,376 @@ Individuals planning for financial goals -- such as retirement, a child's educat
 % ================= LITERATURE REVIEW =================
 \section{Literature Review}
 
-% --- SLIDE 1 ---
-\begin{frame}{Literature Summary (1/2)}
-    \tiny
-    \centering
-    \begin{tabular}{p{0.5cm} p{2cm} p{4cm} p{2.5cm} c}
-        \toprule
-        \textbf{Ref} & \textbf{Author(s)} & \textbf{Title} & \textbf{Journal} & \textbf{Year} \\
-        \midrule
-        1 & Karzanov et al. & Regret-Optimized Portfolio Enhancement [BASE PAPER] & arXiv & 2025 \\
-        2 & Dhashanamoorthi et al. & AI-driven robo-advisors on personal financial mgmt & Int. J. of Sci. and Research & 2024 \\
-        3 & Sunilkumar & AI Revolution in Wealth Management & J. of Info Systems Eng. & 2025 \\
-        4 & Ansari et al. & Multifaceted Approach to Stock Market Trading Using RL & IEEE Access & 2024 \\
-        5 & Sattar et al. & RMS-Driven Deep RL for Optimized Portfolio Management & IEEE Access & 2025 \\
-        6 & Yin \& Guo & Complex forecasting via chain-of-thought of LLMs & Science Direct & 2025 \\
-        7 & Benhamou et al. & Detecting and adapting to crisis pattern with context DRL & arXiv & 2020 \\
-        8 & Samanta et al. & Effectiveness of SIP Investment Among Retail Investors & Int. J. for Novel Research & 2024 \\
-        9 & Kanagaraj et al. & Potential of AI in personal financial planning & arXiv & 2024 \\
-        10 & Boaretto \& Medeiros & Forecasting inflation using disaggregates and ML & arXiv & 2023 \\
-        11 & Solanki \& Jha & GAF-ResNet-LSTM Framework for Asset Selection & IEEE Access & 2025 \\
-        12 & Kevin \& Yugopuspito & Hybrid LSTM and PPO Networks for Portfolio Optimization & arXiv & 2025 \\
-        \bottomrule
-    \end{tabular}
+% =========================================================
+% LITERATURE REVIEW TABLE
+% Required packages in preamble:
+%
+% \usepackage{booktabs}
+% \usepackage{array}
+% \usepackage{adjustbox}
+%
+% =========================================================
+
+
+% =========================================================
+% SLIDE 1 -- PAPERS 1-6
+% =========================================================
+
+
+
+\begin{frame}{Literature Summary (1/4)}
+
+\scriptsize
+
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{c p{1.8cm} p{2.5cm} p{1.5cm} p{2.8cm} p{2.8cm} p{2.5cm} p{2.5cm}}
+\toprule
+
+\textbf{Ref} &
+\textbf{Author \& Year} &
+\textbf{Title} &
+\textbf{Journal} &
+\textbf{Methodology} &
+\textbf{Result} &
+\textbf{Advantages} &
+\textbf{Disadvantages} \\
+
+\midrule
+
+1 &
+Karzanov et al., 2025 &
+Regret-Optimized Portfolio Enhancement [BASE PAPER] &
+arXiv &
+Regret-based portfolio optimization using risk-adjusted objectives and historical market data. &
+Produces portfolios with improved regret performance and better control of downside risk. &
+Improves portfolio robustness and risk control. &
+Requires reliable market estimates and can be computationally demanding. \\
+
+\midrule
+
+2 &
+Dhashanamoorthi et al., 2024 &
+AI-driven robo-advisors on personal financial management &
+Int. J. of Sci. and Research &
+AI-based robo-advisory framework using financial analysis, investor profiling and personalized recommendations. &
+Demonstrates the potential of AI to automate personalized financial-management decisions. &
+Automated and personalized advice with reduced advisory effort. &
+Dependent on data quality and has limited human interaction. \\
+
+\midrule
+
+3 &
+Sunilkumar, 2025 &
+AI Revolution in Wealth Management &
+J. of Info Systems Eng. &
+Analysis of AI and machine-learning applications in wealth-management and investment decisions. &
+Shows that AI can improve automation, financial analysis and decision-support capabilities. &
+Enables automation, scalability and faster financial analysis. &
+Data dependency, model complexity and explainability concerns. \\
+
+\midrule
+
+4 &
+Ansari et al., 2024 &
+Multifaceted Approach to Stock Market Trading Using RL &
+IEEE Access &
+Reinforcement-learning framework using market information and trading strategies for automated stock trading. &
+RL-based strategies demonstrate the ability to adapt trading decisions to changing market conditions. &
+Adaptive decision making and automated trading. &
+Sensitive to market noise, reward design and training parameters. \\
+
+\midrule
+
+5 &
+Sattar et al., 2025 &
+RMS-Driven Deep RL for Optimized Portfolio Management &
+IEEE Access &
+Deep reinforcement learning combined with risk-management techniques for dynamic portfolio optimization. &
+Demonstrates improved portfolio optimization by incorporating risk management into the learning process. &
+Combines return optimization with risk management. &
+High computational requirements and possible training instability. \\
+
+\midrule
+
+6 &
+Yin \& Guo, 2025 &
+Complex forecasting via chain-of-thought of LLMs &
+Science Direct &
+Large language models with chain-of-thought reasoning for complex forecasting tasks. &
+Shows that structured LLM reasoning can improve performance on complex forecasting problems. &
+Improves reasoning capability for complex forecasting. &
+High computational cost and difficulty verifying generated reasoning. \\
+
+\bottomrule
+\end{tabular}%
+}
+
 \end{frame}
 
-% --- SLIDE 2 ---
-\begin{frame}{Literature Summary (2/2)}
-    \tiny
-    \centering
-    \begin{tabular}{p{0.5cm} p{2cm} p{4cm} p{2.5cm} c}
-        \toprule
-        \textbf{Ref} & \textbf{Author(s)} & \textbf{Title} & \textbf{Journal} & \textbf{Year} \\
-        \midrule
-        13 & Olamijuwon \& Zouo & ML in budget forecasting for corporate finance & Open Access Research & 2024 \\
-        14 & Spadea \& Seneviratne & Parallel and Multi-Stage Knowledge Graph Retrieval & arXiv & 2025 \\
-        15 & Patra et al. & AI-Driven Goal Based Financial Planning System & Rademics Research Inst. & 2025 \\
-        16 & Lwele et al. & Risk-Aware Deep RL for Dynamic Portfolio Optimization & arXiv & 2025 \\
-        17 & Gaspar \& Oliveira & Robo Advising and Investor Profiling & MDPI & 2024 \\
-        18 & Shetty et al. & Robo-advisors in financial services & Science Direct & 2026 \\
-        19 & Kofman & Scoring the Ethics of AI Robo-Advice & J. of Business Ethics & 2025 \\
-        20 & Lamukanyani et al. & Sentiment-Aware Portfolio Optimization (CVaR-Based) & IEEE Access & 2025 \\
-        21 & Ahn \& Kang & Simul-RL Portfolio Framework: BSM and RL & IEEE Access & 2025 \\
-        22 & Pereguda et al. & Impact of the Digital Economy on Investment Portfolio Mgmt & Eastern Euro. Union & 2024 \\
-        23 & Kulkarni et al. & Role of robo-advisors in behavioural finance & Cogent OA & 2020 \\
-        24 & Enkhsaikhan \& Jo & Uncertainty-Aware RL for Portfolio Optimization & IEEE Access & 2024 \\
-        \bottomrule
-    \end{tabular}
+\begin{frame}{Literature Summary (2/4)}
+
+\scriptsize
+
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{c p{1.8cm} p{2.5cm} p{1.5cm} p{2.8cm} p{2.8cm} p{2.5cm} p{2.5cm}}
+\toprule
+
+\textbf{Ref} &
+\textbf{Author \& Year} &
+\textbf{Title} &
+\textbf{Journal} &
+\textbf{Methodology} &
+\textbf{Result} &
+\textbf{Advantages} &
+\textbf{Disadvantages} \\
+
+\midrule
+
+7 &
+Benhamou et al., 2020 &
+Detecting and adapting to crisis pattern with context DRL &
+arXiv &
+Context-aware deep reinforcement learning for detecting and adapting to financial crisis patterns. &
+The framework enables portfolio strategies to adapt when crisis-related market patterns are detected. &
+Adapts portfolio decisions during changing and crisis conditions. &
+Requires sufficient crisis-period data and complex training. \\
+
+\midrule
+
+8 &
+Samanta et al., 2024 &
+Effectiveness of SIP Investment Among Retail Investors &
+Int. J. for Novel Research &
+Empirical analysis of systematic investment plans using investor data and statistical analysis. &
+The study indicates the role of systematic investing in promoting disciplined investment behaviour among retail investors. &
+Highlights disciplined investing and investor behaviour. &
+Limited applicability to automated portfolio optimization. \\
+
+\midrule
+
+9 &
+Kanagaraj et al., 2024 &
+Potential of AI in personal financial planning &
+arXiv &
+AI-based personal financial planning using financial information and intelligent recommendation techniques. &
+Shows that AI can support personalized financial planning and automated recommendations. &
+Supports personalized planning and automated decision making. &
+Privacy, data-quality and explainability concerns. \\
+
+\midrule
+
+10 &
+Boaretto \& Medeiros, 2023 &
+Forecasting inflation using disaggregates and ML &
+arXiv &
+Machine-learning models using disaggregated economic variables for inflation forecasting. &
+Machine-learning approaches demonstrate the ability to capture nonlinear relationships in inflation forecasting. &
+Captures complex economic relationships. &
+Sensitive to data quality, feature selection and model choice. \\
+
+\midrule
+
+11 &
+Solanki \& Jha, 2025 &
+GAF-ResNet-LSTM Framework for Asset Selection &
+IEEE Access &
+Gramian Angular Field representation combined with ResNet and LSTM for financial asset selection. &
+The hybrid framework effectively captures spatial and temporal patterns for asset-selection decisions. &
+Captures both spatial and temporal financial patterns. &
+High model complexity and computational requirements. \\
+
+\midrule
+
+12 &
+Kevin \& Yugopuspito, 2025 &
+Hybrid LSTM and PPO Networks for Portfolio Optimization &
+arXiv &
+Hybrid architecture combining LSTM prediction with PPO reinforcement learning for portfolio optimization. &
+The hybrid model combines sequential market prediction with adaptive portfolio allocation. &
+Combines prediction with adaptive portfolio decisions. &
+Training complexity and sensitivity to hyperparameters. \\
+
+\bottomrule
+\end{tabular}%
+}
+
+\end{frame}
+
+\begin{frame}{Literature Summary (3/4)}
+
+\scriptsize
+
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{c p{1.8cm} p{2.5cm} p{1.5cm} p{2.8cm} p{2.8cm} p{2.5cm} p{2.5cm}}
+\toprule
+
+\textbf{Ref} &
+\textbf{Author \& Year} &
+\textbf{Title} &
+\textbf{Journal} &
+\textbf{Methodology} &
+\textbf{Result} &
+\textbf{Advantages} &
+\textbf{Disadvantages} \\
+
+\midrule
+
+13 &
+Olamijuwon \& Zouo, 2024 &
+ML in budget forecasting for corporate finance &
+Open Access Research &
+Machine-learning models applied to corporate budget and financial forecasting. &
+ML-based forecasting can improve automated budget prediction and identify complex financial patterns. &
+Automates forecasting and identifies complex patterns. &
+Dependent on historical data quality and model assumptions. \\
+
+\midrule
+
+14 &
+Spadea \& Seneviratne, 2025 &
+Parallel and Multi-Stage Knowledge Graph Retrieval &
+arXiv &
+Parallel and multi-stage knowledge-graph retrieval for structured information processing. &
+The approach improves information retrieval by combining multiple retrieval stages and contextual knowledge. &
+Improves retrieval efficiency and contextual information access. &
+Increased system complexity and computational overhead. \\
+
+\midrule
+
+15 &
+Patra et al., 2025 &
+AI-Driven Goal Based Financial Planning System &
+Rademics Research Inst. &
+AI-based financial planning using user goals, financial information and automated recommendations. &
+The system supports goal-oriented financial planning through personalized AI-based recommendations. &
+Provides personalized and goal-oriented financial planning. &
+Requires detailed user information and reliable financial data. \\
+
+\midrule
+
+16 &
+Lwele et al., 2025 &
+Risk-Aware Deep RL for Dynamic Portfolio Optimization &
+arXiv &
+Risk-aware deep reinforcement learning for dynamic portfolio allocation. &
+The framework incorporates portfolio risk into the learning process to support risk-sensitive allocation decisions. &
+Explicitly incorporates investment risk. &
+Complex training and sensitivity to market conditions. \\
+
+\midrule
+
+17 &
+Gaspar \& Oliveira, 2024 &
+Robo Advising and Investor Profiling &
+MDPI &
+Robo-advisory framework using investor profiling and automated portfolio recommendations. &
+Shows how investor profiles can be incorporated into automated robo-advisory recommendations. &
+Provides scalable and personalized investment advice. &
+May provide less personalization than human advisory. \\
+
+\midrule
+
+18 &
+Shetty et al., 2026 &
+Robo-advisors in financial services &
+Science Direct &
+Review and analysis of AI-powered robo-advisory systems in financial services. &
+The review identifies automation, accessibility and scalability as major capabilities of robo-advisory systems. &
+Highlights automation, accessibility and scalability. &
+Trust, transparency, regulation and explainability concerns. \\
+
+\bottomrule
+\end{tabular}%
+}
+
+\end{frame}
+\begin{frame}{Literature Summary (4/4)}
+
+\scriptsize
+
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{c p{1.8cm} p{2.5cm} p{1.5cm} p{2.8cm} p{2.8cm} p{2.5cm} p{2.5cm}}
+\toprule
+
+\textbf{Ref} &
+\textbf{Author \& Year} &
+\textbf{Title} &
+\textbf{Journal} &
+\textbf{Methodology} &
+\textbf{Result} &
+\textbf{Advantages} &
+\textbf{Disadvantages} \\
+
+\midrule
+
+19 &
+Kofman, 2025 &
+Scoring the Ethics of AI Robo-Advice &
+J. of Business Ethics &
+Ethical evaluation framework for assessing AI-based robo-advisory practices. &
+Provides a structured approach for identifying and evaluating ethical issues in AI-based robo-advice. &
+Provides a framework for ethical evaluation. &
+Ethical assessment may depend on subjective criteria. \\
+
+\midrule
+
+20 &
+Lamukanyani et al., 2025 &
+Sentiment-Aware Portfolio Optimization (CVaR-Based) &
+IEEE Access &
+Portfolio optimization combining market sentiment with CVaR-based downside-risk management. &
+The framework incorporates investor sentiment and downside risk into portfolio allocation decisions. &
+Combines sentiment analysis with downside-risk control. &
+Dependent on sentiment quality and accurate CVaR estimation. \\
+
+\midrule
+
+21 &
+Ahn \& Kang, 2025 &
+Simul-RL Portfolio Framework: BSM and RL &
+IEEE Access &
+Simulation framework combining Black-Scholes-Merton modelling with reinforcement learning. &
+Demonstrates how financial modelling and RL can be integrated for portfolio decision making. &
+Combines financial modelling with adaptive RL decisions. &
+Simulation assumptions may not fully represent real markets. \\
+
+\midrule
+
+22 &
+Pereguda et al., 2024 &
+Impact of the Digital Economy on Investment Portfolio Mgmt &
+Eastern Euro. Union &
+Analysis of digital-economy technologies and their impact on investment portfolio management. &
+Shows the influence of digital technologies on modern portfolio-management processes. &
+Highlights potential benefits of digitalization. &
+Primarily analytical with limited direct implementation. \\
+
+\midrule
+
+23 &
+Kulkarni et al., 2020 &
+Role of robo-advisors in behavioural finance &
+Cogent OA &
+Analysis of robo-advisory systems from a behavioural-finance perspective. &
+Shows the relationship between automated investment services and behavioural aspects of investors. &
+Connects automated investing with investor behaviour. &
+Behavioural factors are difficult to quantify and model. \\
+
+\midrule
+
+24 &
+Enkhsaikhan \& Jo, 2024 &
+Uncertainty-Aware RL for Portfolio Optimization &
+IEEE Access &
+Reinforcement-learning framework incorporating uncertainty into portfolio optimization. &
+The framework accounts for uncertainty during portfolio decision making and allocation. &
+Accounts for uncertainty in portfolio decisions. &
+Higher computational complexity and difficult uncertainty estimation. \\
+
+\bottomrule
+\end{tabular}%
+}
+
 \end{frame}
 
 \begin{frame}{Literature Review (1/24): Regret-Optimized Portfolio Enhancement through DRL and Future Looking Rewards}
