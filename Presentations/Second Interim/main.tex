@@ -5,6 +5,8 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
 
 \title[Financial Goal Planner]{Financial Goal Planner: An AI-Driven Goal-Based Investment Planning and Risk-Aware Recommendation System}
 \author[Group 5]{Amarthya Regimon Joseph \and Aswin P \and Athira Raj \and Haleema S}
@@ -336,6 +338,13 @@ Individuals planning for financial goals -- such as retirement, a child's educat
 \end{itemize}
 \end{frame}
 
+% ================SYSTEM ARCHITECTURE===============
+
+\begin{frame}{System Architecture}
+\centering
+    \includegraphics[width=0.6\linewidth]{system_architecture.png}
+\end{frame}
+
 % ================= PROJECT PLANNING =================
 \section{Project Planning}
 
@@ -360,7 +369,11 @@ Individuals planning for financial goals -- such as retirement, a child's educat
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Athira Raj --- Mobile Application \& UI/UX}
+\begin{frame}{Usecase Diagram}
+    \includegraphics[width=1\linewidth]{usecase_diagram.png}
+\end{frame}
+
+\begin{frame}{Mobile Application \& UI/UX}
 \small
 \textbf{Primary:}
 \begin{itemize}
@@ -387,7 +400,7 @@ Individuals planning for financial goals -- such as retirement, a child's educat
 \end{frame}
 
 
-\begin{frame}{Haleema S --- Risk Profiling \& User Modelling}
+\begin{frame}{Risk Profiling \& User Modelling}
 \small
 \textbf{Primary:}
 \begin{itemize}
@@ -412,7 +425,7 @@ Individuals planning for financial goals -- such as retirement, a child's educat
 \end{figure}
 \end{frame}
 
-\begin{frame}{Amarthya Regimon Joseph --- AI Recommendation \& Portfolio Allocation}
+\begin{frame}{AI Recommendation \& Portfolio Allocation}
 \small
 \textbf{Primary:}
 \begin{itemize}
@@ -438,7 +451,7 @@ Individuals planning for financial goals -- such as retirement, a child's educat
 \end{figure}
 \end{frame}
 
-\begin{frame}{Aswin P --- Financial Forecasting \& Financial Computation}
+\begin{frame}{Financial Forecasting \& Financial Computation}
 \small
 \textbf{Primary:}
 \begin{itemize}
@@ -466,28 +479,7 @@ Individuals planning for financial goals -- such as retirement, a child's educat
 \end{frame}
 
 % ================= UML DIAGRAMS =================
-\section{System Architecture \& Modular Breakdown}
-
-\begin{frame}{System Architecture: Level 0 }
-\begin{figure}
-    \centering
-    \includegraphics[width=0.9\textwidth]{level_0.png}
-\end{figure}
-\end{frame}
-
-\begin{frame}{System Architecture: Level 1}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.75\textwidth]{level_1.png}
-\end{figure}
-\end{frame}
-
-\begin{frame}{System Architecture: Level 2}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.85\textwidth]{system_architecture.png}
-\end{figure}
-\end{frame}
+\section{Modular Breakdown}
 
 \begin{frame}{Modular Breakdown}
     \begin{block}{Module 1: Mobile Application \& UI/UX}
