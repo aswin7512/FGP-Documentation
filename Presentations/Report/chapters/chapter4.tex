@@ -1,0 +1,142 @@
+%%********************Chapter 4**********
+\chapter{\uppercase{Objectives and Proposed System}}
+
+\section{Objectives}
+The main objectives of the proposed project are:
+\begin{enumerate}
+	\item To design a mobile application that allows users to define financial goals with a target amount and time horizon such as retirement, education, or vehicle purchase.
+	\item To develop a risk-profiling module that assesses both risk tolerance and risk capacity based on the user's goal horizon and financial situation.
+	\item To build a recommendation engine inspired by the base paper's regret-optimized and future-looking reward formulation that dynamically adjusts asset allocation across mutual funds, equity, and debt instruments as the goal's deadline approaches.
+	\item To provide an intuitive mobile dashboard for tracking goal progress, required SIP contributions, and recommended portfolio adjustments over time.
+\end{enumerate}
+
+\section{System Requirements}
+
+\begin{table}[h!]
+	\centering
+	\caption{Functional Requirements of the Proposed System}
+	\label{tab:funcreq}
+	\vspace*{5pt}
+	{\singlespacing\small
+	\begin{tabular}{|c|p{4cm}|p{6.5cm}|}
+		\hline
+		\textbf{No.} & \textbf{Requirement} & \textbf{Description} \\ \hline
+		1 & Goal Creation & User can create a financial goal with target amount and time horizon. \\ \hline
+		2 & Financial Calculation & System calculates required savings and periodic investment. \\ \hline
+		3 & Risk Profiling & System evaluates user risk tolerance and risk capacity. \\ \hline
+		4 & Feasibility Assessment & System checks whether the selected goal is financially achievable. \\ \hline
+		5 & Investment Recommendation & System provides personalized investment allocation recommendations. \\ \hline
+		6 & Dynamic Allocation & System adjusts allocation based on remaining goal horizon. \\ \hline
+		7 & Progress Tracking & User can monitor goal progress through the mobile dashboard. \\ \hline
+	\end{tabular}}
+\end{table}
+
+\subsection{Functional Requirements}
+The proposed system shall provide the following functional capabilities:
+\begin{itemize}
+	\item User profile management.
+	\item Financial goal creation and management.
+	\item Goal amount and deadline input.
+	\item Inflation-adjusted goal calculation.
+	\item SIP calculation.
+	\item Safety and feasibility assessment.
+	\item Risk profiling.
+	\item Personalized investment recommendation.
+	\item Dynamic asset allocation.
+	\item Goal progress tracking.
+	\item Mobile dashboard.
+\end{itemize}
+
+\subsection{Non-Functional Requirements}
+The system should satisfy the following non-functional requirements:
+\begin{itemize}
+	\item Usability.
+	\item Reliability.
+	\item Security.
+	\item Maintainability.
+	\item Scalability.
+	\item Performance.
+	\item Responsiveness.
+\end{itemize}
+
+\subsection{Software Requirements}
+The planned software environment includes:
+\begin{itemize}
+	\item Mobile application development framework.
+	\item Backend and API services.
+	\item Database system.
+	\item Python-based machine-learning environment.
+	\item Reinforcement Learning libraries.
+	\item Development and testing tools.
+\end{itemize}
+
+\section{Proposed System Architecture}
+The proposed system architecture illustrates the overall workflow of the Financial Goal Planner and the interaction between its major modules. The system collects the user's financial goal, target amount, investment horizon, savings capacity, and risk-related information through the mobile application.
+
+The collected information is processed through the Goal Management, Financial Calculation, Safety and Feasibility, and Risk Profiling modules. These outputs are provided to the Recommendation Engine, which generates a personalized investment recommendation based on the user's goal, financial condition, risk profile, and investment horizon.
+
+The Dynamic Allocation Module adjusts the recommended allocation according to the remaining goal horizon. Finally, the Dashboard presents the goal progress, financial requirements, feasibility status, risk profile, and recommended allocation to the user.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.95\linewidth]{figures/architecture.png}
+	\caption{Proposed System Architecture}
+	\label{fig:architecture}
+\end{figure}
+
+The proposed architecture is inspired by the base paper, ``Regret-Optimized Portfolio Enhancement through Deep Reinforcement Learning and Future Looking Rewards''. The proposed system adapts the regret-aware and future-looking portfolio concepts to a goal-based financial planning environment by considering the financial goal, feasibility, risk profile, and remaining investment horizon.
+
+\section{Major Modules}
+The proposed system consists of the following major modules, which work together to provide goal-based and risk-aware investment planning.
+
+\subsection{Goal Management}
+The Goal Management module allows users to create and manage financial goals by specifying the goal type, target amount, and investment horizon. These details are used by the subsequent financial calculation and recommendation modules.
+
+\subsection{Financial Calculation Module}
+The Financial Calculation Module determines the financial requirements associated with the selected goal. It considers factors such as target amount, investment period, inflation, expected return, and required periodic contribution such as SIP.
+
+\subsection{Safety and Feasibility Calculator}
+The Safety and Feasibility Calculator evaluates whether the selected financial goal is practically achievable. It compares the required investment with the user's available savings or periodic contribution capacity.
+
+\subsection{Risk Profiling}
+The Risk Profiling module evaluates the user's risk characteristics using relevant financial and goal-related information. The resulting risk profile is used by the Recommendation Engine while generating the investment recommendation.
+
+\subsection{Recommendation Engine}
+The Recommendation Engine combines the goal details, financial calculations, feasibility result, risk profile, and investment horizon to generate a personalized investment recommendation. Its design is inspired by the regret-based and future-looking reward concepts of the base paper.
+
+\subsection{Dynamic Allocation and Dashboard}
+The Dynamic Allocation module adjusts the recommended asset allocation according to the remaining goal horizon and the user's risk profile. The Dashboard presents the goal progress, financial requirements, feasibility status, risk profile, and recommended allocation to the user.
+
+\begin{table}[h!]
+	\centering
+	\caption{Major Modules of the Proposed System}
+	\label{tab:modules}
+	\vspace*{5pt}
+	{\singlespacing\small
+	\begin{tabular}{|c|p{4cm}|p{6.5cm}|}
+		\hline
+		\textbf{No.} & \textbf{Module} & \textbf{Description} \\ \hline
+		1 & Goal Management & Defines the financial goal, target amount, and time horizon. \\ \hline
+		2 & Financial Calculation & Calculates future goal amount, required savings, and SIP contribution. \\ \hline
+		3 & Safety and Feasibility & Evaluates whether the selected financial goal is practically achievable. \\ \hline
+		4 & Risk Profiling & Assesses the user's risk tolerance and risk capacity. \\ \hline
+		5 & Recommendation Engine & Generates personalized investment recommendations based on goal, horizon, and risk profile. \\ \hline
+		6 & Dynamic Allocation and Dashboard & Adjusts asset allocation and displays goal progress and recommendations. \\ \hline
+	\end{tabular}}
+\end{table}
+
+\subsection{Data Flow Diagram}
+The Data Flow Diagram (DFD) represents the flow of information between the user and the major modules of the proposed system. It shows how the user's financial and goal-related information is processed to generate the final investment recommendation.
+
+% Place the DFD image at figures/level_1.png. If the file is missing, a
+% placeholder box is printed instead so the document still compiles.
+\begin{figure}[h!]
+	\centering
+	\IfFileExists{figures/level_1.png}{%
+		\includegraphics[width=0.95\linewidth]{figures/level_1.png}%
+	}{%
+		\fbox{\parbox[c][7cm][c]{0.9\linewidth}{\centering DFD Level 1 --- add \texttt{figures/level\_1.png}}}%
+	}
+	\caption{Data Flow Diagram Level 1}
+	\label{fig:dfd}
+\end{figure}

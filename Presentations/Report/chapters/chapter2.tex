@@ -1,0 +1,333 @@
+%%********************Chapter 2**********
+\chapter{\uppercase{Literature Review}}
+The literature review was conducted to understand the existing research related to artificial intelligence in financial planning, robo-advisory, investor profiling, reinforcement learning, portfolio optimization, risk-aware investment, and goal-based financial planning. The reviewed studies provide the theoretical and technical foundation for the proposed Financial Goal Planner.
+
+The literature mainly focuses on automated investment decisions, portfolio optimization, risk management, financial forecasting, investor behaviour, and AI-based advisory systems. Reinforcement learning and deep reinforcement learning have received particular attention because financial decisions are sequential in nature and the investment strategy may need to change according to market conditions.
+
+The reviewed studies also indicate that conventional investment strategies may not be sufficient for all users because investment decisions depend on factors such as financial capacity, risk tolerance, investment horizon, expected returns, and changing market conditions. Therefore, the proposed project combines financial goal calculation, feasibility assessment, risk profiling, AI-based recommendation, and dynamic allocation into a unified goal-oriented system.
+
+\section{Base Paper and Core Literature}
+The following papers form the core literature of the proposed project. They are closely related to reinforcement learning, portfolio optimization, robo-advisory, financial planning, and artificial intelligence-based investment recommendation.
+
+\subsection{Regret-Optimized Portfolio Enhancement through Deep Reinforcement Learning and Future Looking Rewards}
+Daniil Karzanov, Ruben Garz\'on, Mikhail Terekhov, Caglar Gulcehre, Thomas Raffinot, and Marcin Detyniecki proposed an agent-based approach for improving an existing portfolio strategy using Deep Reinforcement Learning (DRL). The paper uses Proximal Policy Optimization (PPO) for dynamic portfolio rebalancing and considers the conventional 60/40 portfolio as the strategy to be enhanced.
+
+A major contribution of the study is the use of a regret-based Sharpe reward function. Instead of simply rewarding the agent for obtaining a high return, the reward considers the difference between the performance of the selected allocation and an optimal allocation. This allows the agent to learn from the opportunity that was missed by selecting a particular portfolio allocation.
+
+The paper also introduces a future-looking reward function. Future return information is used during training to make the reward more representative of the future consequences of an allocation decision. However, future information is not used during inference, thereby avoiding information leakage during testing.
+
+Another important component is the transaction cost scheduler. Transaction costs are gradually introduced during training so that the agent can learn the investment problem without being dominated by transaction-cost penalties at the beginning of training.
+
+The study also uses synthetic financial data generated through a circular block bootstrap approach. This is intended to increase the diversity of training data and improve generalization.
+
+The main evaluation measures considered in the paper are return and maximum drawdown. The paper therefore combines return optimization with risk considerations instead of focusing only on return.
+
+The proposed project is directly inspired by this work. The Recommendation Engine uses the concept of regret-aware decision making, while Dynamic Allocation adapts the recommended allocation according to the remaining investment horizon. The proposed system extends the idea from general portfolio enhancement to goal-oriented financial planning.
+
+\subsection{AI-driven Robo-Advisors on Personal Financial Management and Investment Strategies}
+Dhashanamoorthi et al. studied the application of Artificial Intelligence in robo-advisory and personal financial management. Robo-advisors are automated systems that assist users in making investment-related decisions by processing financial and user information.
+
+The study highlights the role of AI in automating financial decision-making and portfolio management. Instead of depending entirely on manual financial advice, an AI-based system can analyse user-related information and provide personalized recommendations.
+
+One important aspect of robo-advisory is personalization. Different users have different financial conditions, investment objectives, and risk preferences. Therefore, a recommendation that is suitable for one user may not be suitable for another user.
+
+The paper is relevant to the proposed project because the Financial Goal Planner also aims to provide personalized investment guidance. The proposed system collects information about the user's financial goal, target amount, investment horizon, savings capacity, and risk profile before generating a recommendation.
+
+Thus, this study provides support for the use of AI-based personalized financial advisory as a component of the proposed system.
+
+\subsection{AI Revolution in Wealth Management: Applications and Horizons}
+Preetham Sunilkumar discussed the growing role of Artificial Intelligence in wealth management. The study focuses on how AI technologies can be applied to financial decision-making and wealth-management activities.
+
+AI can process large amounts of financial information and can be used to support decision-making processes that may otherwise require significant manual effort. The application of AI can therefore improve automation and personalization in financial services.
+
+The paper is important for the proposed project because the Financial Goal Planner is also designed as an AI-assisted financial planning system. The project uses automated calculations, risk assessment, recommendation generation, and dynamic allocation to support the user.
+
+However, a general wealth-management system may not specifically focus on individual financial goals and deadlines. The proposed system therefore focuses on goal-oriented investment planning where the recommendation is connected to a specific financial objective and its time horizon.
+
+\subsection{A Multifaceted Approach to Stock Market Trading Using Reinforcement Learning}
+Ansari et al. presented a reinforcement learning based approach for stock market trading. The study investigates the use of multiple financial indicators and reinforcement learning techniques for making trading decisions.
+
+The work demonstrates the relevance of reinforcement learning to financial decision-making. In reinforcement learning, an agent observes the state of the environment, performs an action, receives a reward, and learns a strategy that improves future decisions.
+
+The paper is significant because financial markets are sequential and dynamic environments. An investment decision at one point in time can influence the portfolio state and future decisions.
+
+The study is related to the proposed project through its use of reinforcement learning for financial decision-making. However, the objective of stock trading differs from the objective of the proposed Financial Goal Planner.
+
+The proposed project does not focus primarily on short-term stock trading. Instead, it focuses on long-term financial goals and goal-based asset allocation. The reinforcement learning concept is therefore adapted toward allocation and recommendation rather than direct speculative trading.
+
+\subsection{A Novel RMS-Driven Deep Reinforcement Learning for Optimized Portfolio Management in Stock Trading}
+Sattar et al. investigated a Deep Reinforcement Learning approach for portfolio management. The work is relevant to the problem of automatically selecting and managing portfolio allocations in a changing financial environment.
+
+The use of a risk-related performance measure is particularly important in portfolio management because a high return alone does not necessarily indicate a suitable investment strategy. Portfolio risk must also be considered when evaluating investment performance.
+
+This study supports the idea that a portfolio management system should evaluate both return and risk. This principle is incorporated into the proposed Financial Goal Planner through risk profiling and risk-aware recommendation.
+
+The main difference is that the proposed project combines portfolio allocation with financial-goal information. The recommended allocation is expected to depend not only on market information but also on the user's risk profile and remaining goal horizon.
+
+\subsection{Complex Forecasting and Investment Strategy Optimization via Chain-of-Thought of Large Language Models}
+Yin and Guo investigated the use of Large Language Models (LLMs) for financial forecasting and investment strategy optimization. The study represents the emerging use of generative AI and language models in financial applications.
+
+LLMs can process and organize complex information and may provide additional support for financial analysis and decision-making. This introduces a different approach from conventional numerical financial models.
+
+The paper is relevant to the proposed project because AI-based financial systems increasingly require mechanisms for converting complex financial information into understandable recommendations.
+
+However, an LLM-based approach alone does not replace numerical financial calculations, risk assessment, or portfolio optimization. The proposed system therefore separates financial calculations, risk profiling, and recommendation generation into dedicated modules.
+
+This provides a more structured architecture in which AI-based recommendation is supported by quantitative financial calculations.
+
+\section{Additional Literature}
+The following studies provide additional background on crisis-aware reinforcement learning, systematic investment, financial planning, inflation forecasting, portfolio optimization, investor profiling, behavioural finance, robo-advisory, knowledge graphs, and uncertainty-aware reinforcement learning.
+
+\subsection{Detecting and Adapting to Crisis Pattern with Context Based Deep Reinforcement Learning}
+Benhamou et al. studied the use of context-based Deep Reinforcement Learning for detecting and adapting to crisis patterns.
+
+Financial markets can behave differently during normal market conditions and during crisis periods. Therefore, an investment strategy that performs well under normal conditions may not remain appropriate during periods of increased market uncertainty.
+
+The study is relevant to the proposed project because dynamic investment allocation should consider changes in the financial environment. A goal-based portfolio may need to become more conservative when the financial environment becomes unfavourable.
+
+The proposed system uses the remaining goal horizon and risk profile as important factors for allocation decisions. Crisis-aware techniques can be considered as a future extension of the proposed Recommendation Engine and Dynamic Allocation modules.
+
+\subsection{Effectiveness of SIP Investment Among Retail Investors in Jharkhand: A Survey-Based Study}
+Samanta et al. studied the effectiveness and use of Systematic Investment Plans (SIPs) among retail investors.
+
+SIP is an important investment mechanism for individuals who invest a fixed amount periodically rather than investing a large amount at once. It is particularly relevant to goal-based financial planning because a user can plan periodic investments to reach a future target.
+
+The study provides background for considering periodic investment as an important component of personal financial planning.
+
+The proposed Financial Goal Planner includes the calculation of required periodic investment or SIP contribution for achieving a future financial goal. Therefore, this literature supports the financial calculation component of the proposed system.
+
+The proposed project further extends this concept by connecting the required SIP contribution with risk profile, feasibility, and recommended asset allocation.
+
+\subsection{Exploring the Potential of AI in Personal Financial Planning and Advisory Services}
+Ganesan, Vasantha, and Raja examined the potential applications of Artificial Intelligence in personal financial planning and advisory services.
+
+Personal financial planning involves several activities including understanding financial conditions, setting objectives, evaluating investment options, and monitoring financial progress. AI can help automate parts of this process and provide personalized assistance based on user-specific information.
+
+The study is relevant to the proposed project because the Financial Goal Planner attempts to combine these activities into one system. The proposed architecture includes goal management, financial calculation, feasibility assessment, risk profiling, recommendation, and progress monitoring.
+
+The main contribution of the proposed project is the integration of these components with goal-oriented dynamic allocation.
+
+\subsection{Forecasting Inflation Using Disaggregates and Machine Learning}
+Medeiros and Boaretto studied the application of Machine Learning for inflation forecasting.
+
+Inflation is important in financial planning because the purchasing power of money changes over time. A financial goal defined today may require a larger amount in the future because of inflation.
+
+Therefore, financial planning systems should consider the future value of a goal rather than simply using its current cost.
+
+The proposed Financial Goal Planner considers inflation while estimating the future goal amount. The inflation forecasting literature provides motivation for incorporating inflation into goal-based financial calculations.
+
+The proposed project does not necessarily require a dedicated inflation forecasting model in the initial phase. Instead, the system can use an assumed or externally supplied inflation rate. More advanced inflation prediction can be considered as a future extension.
+
+\subsection{From Time Series to Images: A GAF-ResNet-LSTM Framework for Asset Selection and Portfolio Optimization}
+Solanki et al. proposed a framework that converts financial time-series information into image-like representations using Gramian Angular Fields (GAF) and combines deep learning techniques for asset selection and portfolio optimization.
+
+Financial time series contain temporal patterns that may be difficult for conventional models to capture directly. Transforming time-series information into alternative representations can allow deep learning models to identify complex patterns.
+
+The combination of GAF, ResNet, and LSTM demonstrates how different deep learning architectures can be combined for financial prediction and portfolio selection.
+
+This work is relevant to the proposed project because the Recommendation Engine may use historical market information as part of future implementations.
+
+However, the proposed project focuses more strongly on user goals, risk profile, and investment horizon rather than only predicting asset behaviour. Therefore, such deep learning forecasting techniques can be incorporated later as additional inputs to the recommendation process.
+
+\subsection{Hybrid LSTM and PPO Networks for Dynamic Portfolio Optimization}
+Yugopuspito et al. proposed a hybrid approach combining Long Short-Term Memory (LSTM) networks with Proximal Policy Optimization (PPO) for dynamic portfolio optimization.
+
+LSTM networks are suitable for sequential data because they can retain information from previous observations. PPO, on the other hand, is a reinforcement learning algorithm that can learn decision-making policies.
+
+Combining forecasting and reinforcement learning can provide a framework where predicted market information is used by an RL agent to determine portfolio actions.
+
+This work is highly relevant to the proposed project because PPO is also connected to the base paper and the planned recommendation engine.
+
+The proposed project can use a similar separation of prediction and decision-making in future versions. However, the first phase focuses on the overall architecture and goal-based recommendation rather than implementing a complex hybrid forecasting model.
+
+\subsection{Machine Learning in Budget Forecasting for Corporate Finance: A Conceptual Model for Improving Financial Planning}
+Olamijuwon and Zouo investigated the use of Machine Learning in budget forecasting for financial planning.
+
+Forecasting future financial requirements is an important part of financial planning. Machine Learning can assist in analysing historical information and estimating future requirements.
+
+Although the paper focuses on corporate financial planning, the underlying idea is relevant to personal financial planning as well. A personal financial planning system also needs to estimate future requirements based on current information.
+
+The proposed Financial Goal Planner applies this concept at the individual level. It estimates the future amount required for a financial goal and determines the required investment contribution.
+
+Thus, the study provides supporting background for the financial calculation and feasibility modules.
+
+\subsection{Parallel and Multi-Stage Knowledge Graph Retrieval for Behaviorally Aligned Financial Asset Recommendations}
+Spadea and Seneviratne investigated knowledge-graph-based retrieval for financial asset recommendations.
+
+Financial recommendation systems may need to consider several relationships among users, financial products, asset characteristics, and behavioural preferences.
+
+Knowledge graphs provide a structured way of representing such relationships and retrieving relevant information.
+
+This work is relevant to the proposed Recommendation Engine because personalized recommendation requires more than simply ranking financial assets by expected return.
+
+The proposed project currently uses goal characteristics and risk profile as major inputs to recommendation. Knowledge-graph-based retrieval can be considered as a future extension for representing more detailed relationships between user preferences and financial assets.
+
+\subsection{Risk-Aware Deep Reinforcement Learning for Dynamic Portfolio Optimization}
+Lwele, Sabuni Emmanuel, and Sitali Gabriel investigated risk-aware Deep Reinforcement Learning for dynamic portfolio optimization.
+
+Traditional reinforcement learning objectives may concentrate strongly on maximizing rewards. In financial applications, however, risk must also be considered because large losses can be harmful even when the average return is high.
+
+A risk-aware RL approach is therefore important for investment applications where the objective is not simply maximum return.
+
+This study directly supports the risk-aware design of the proposed project. The Financial Goal Planner includes a separate Risk Profiling module so that the recommendation can reflect the user's risk characteristics.
+
+The proposed Dynamic Allocation module further considers the remaining goal horizon, allowing the investment recommendation to become more conservative as the deadline approaches.
+
+\subsection{Robo Advising and Investor Profiling}
+Gaspar and Oliveira studied robo-advisory and investor profiling.
+
+Investor profiling is an important part of financial advisory because investors differ in their tolerance and capacity for financial risk.
+
+An automated investment advisor should therefore collect relevant information about the investor before generating an investment recommendation.
+
+This study directly supports the Risk Profiling module of the proposed system.
+
+The proposed project considers risk profiling as an independent module. The output of the module is passed to the Recommendation Engine, where it is combined with goal information and investment horizon.
+
+This separation helps ensure that recommendations are not generated without considering the user's financial characteristics.
+
+\subsection{Robo-Advisors in Financial Services: Redefining Wealth Management in the Age of Artificial Intelligence}
+Shetty, Singh, and Verma discussed the changing role of robo-advisors in financial services and wealth management.
+
+Robo-advisors provide automated investment-related services and reduce the amount of manual intervention required in financial decision-making.
+
+The increasing use of AI in wealth management indicates a shift towards automated and personalized financial services.
+
+The paper is relevant to the proposed project because the Financial Goal Planner can be viewed as a goal-oriented robo-advisory application.
+
+However, the proposed project has a narrower and more specific objective. Instead of general wealth management, it focuses on individual financial goals and determines how the recommended allocation should change according to the remaining goal period.
+
+\subsection{Scoring the Ethics of AI Robo-Advice: Why We Need Gateways and Ratings}
+Kofman discussed ethical considerations related to AI-based robo-advice.
+
+Automated financial recommendations can influence important financial decisions. Therefore, recommendation systems should be designed with appropriate safeguards and should not be treated as unquestionable financial decisions.
+
+This literature is important for the proposed project because the system provides recommendations based on user information and financial calculations.
+
+The proposed system should therefore present recommendations as decision-support information rather than as guaranteed financial outcomes. The feasibility calculation and risk profiling modules also provide additional checks before presenting an allocation.
+
+Ethical and responsible AI considerations can be incorporated into future versions through explainable recommendations, transparency, and appropriate user warnings.
+
+\subsection{Sentiment-Aware Portfolio Optimization: CVaR-Based Diversification with Deep Reinforcement Learning}
+Lamukanyani and Mantshimuli studied sentiment-aware portfolio optimization using Deep Reinforcement Learning and Conditional Value-at-Risk (CVaR)-based diversification.
+
+The study demonstrates the possibility of combining market sentiment information with portfolio optimization.
+
+Sentiment represents an additional information source that can potentially help an investment system understand market conditions. CVaR provides a way of considering losses beyond ordinary measures of average risk.
+
+The paper is relevant to the proposed system because it demonstrates how alternative risk information and market signals can be combined with reinforcement learning.
+
+The initial version of the proposed Financial Goal Planner does not depend on sentiment analysis. However, sentiment information can be considered as a future input to the Recommendation Engine, while risk measures such as CVaR can be explored for more advanced risk-aware allocation.
+
+\subsection{Simul-RL Portfolio Framework: Black-Scholes-Merton and Reinforcement Learning for Asset Allocation}
+Ahn and Kang proposed a portfolio framework combining financial modelling concepts with reinforcement learning for asset allocation.
+
+The work demonstrates the use of a simulated financial environment to study reinforcement learning based allocation decisions.
+
+Simulation is particularly useful in financial research because real market data may not contain enough examples of every possible market condition. Simulated environments can provide additional training scenarios for an RL agent.
+
+This is related to the base paper, which also uses synthetic data generation to improve the learning process.
+
+The proposed project can benefit from similar simulation concepts when testing dynamic allocation behaviour under different investment horizons and market conditions.
+
+\subsection{The Impact of the Digital Economy on Investment Portfolio Management in the Stock Market}
+Pereguda and Biloshkurskyi discussed the impact of digital transformation on investment portfolio management.
+
+The growth of digital technologies has changed how financial information is collected, analysed, and used for investment decisions.
+
+Digital financial systems can provide users with faster access to financial information and automated portfolio-management services.
+
+The study provides broader motivation for developing a digital financial planning application.
+
+The proposed Financial Goal Planner follows this direction by providing a mobile-friendly interface through which users can enter financial goals, view calculations, receive recommendations, and monitor progress.
+
+\subsection{The Role of Robo-Advisors in Behavioural Finance and Shaping Investment Decisions}
+Kulkarni, Patil, and Pramod studied the role of robo-advisors in behavioural finance and investment decisions.
+
+Investor behaviour can influence financial decisions. Individuals may make decisions based on emotions, personal preferences, or short-term market reactions.
+
+Automated advisory systems can provide structured recommendations based on predefined financial information and investment objectives.
+
+This is relevant to the proposed project because the system uses a structured risk-profiling and recommendation process rather than depending entirely on spontaneous user investment decisions.
+
+The proposed system can also be extended in the future to consider behavioural factors as additional inputs to the Risk Profiling module.
+
+\subsection{Uncertainty-Aware Reinforcement Learning for Portfolio Optimization}
+Enkhsaikhan and Jo investigated uncertainty-aware reinforcement learning for portfolio optimization.
+
+Financial markets contain substantial uncertainty. A model may perform well under historical conditions but may behave differently when market conditions change.
+
+Considering uncertainty is therefore important when reinforcement learning is applied to financial decision-making.
+
+This study supports the need for cautious and risk-aware recommendations in the proposed Financial Goal Planner.
+
+The proposed system addresses this at the planning level by considering user risk profile and investment horizon. More advanced uncertainty estimation can be integrated into the Recommendation Engine in future development phases.
+
+\subsection{AI-driven Goal Based Financial Planning System: A Framework for Contextual Feasibility Validation}
+Patra et al. proposed an AI-driven framework for goal-based financial planning with contextual feasibility validation.
+
+Goal-based financial planning is directly related to the objective of the proposed project. Instead of recommending investments without considering a specific objective, goal-based planning starts with the user's target and determines the financial requirements for achieving it.
+
+Feasibility validation is particularly important because a financial goal may not always be achievable using the user's available savings and investment horizon.
+
+This study is therefore highly relevant to the proposed Safety and Feasibility Calculator.
+
+The proposed project extends the goal-based planning concept by combining feasibility assessment with risk profiling, AI-based recommendation, and dynamic allocation.
+
+The combination of these modules allows the system to move from simple goal calculation towards a complete goal-oriented investment planning workflow.
+
+\section{Comparative Summary of the Reviewed Literature}
+The reviewed literature demonstrates that AI and Machine Learning are increasingly being applied to financial planning, portfolio management, risk assessment, forecasting, and robo-advisory.
+
+The literature can be broadly grouped into four major categories. The first category consists of reinforcement learning and deep reinforcement learning approaches for portfolio optimization. The second category focuses on robo-advisory and investor profiling. The third category addresses financial planning, forecasting, and goal-based investment. The fourth category considers additional factors such as sentiment, behavioural finance, uncertainty, and ethical considerations.
+
+The major observations from the literature are summarized below.
+
+{\singlespacing\small
+\renewcommand{\arraystretch}{1.25}
+\begin{longtable}{|p{0.9cm}|p{3.1cm}|p{4.2cm}|p{4.2cm}|}
+\caption{Summary of the Reviewed Literature}\label{tab:litsummary}\\
+\hline
+\textbf{No.} & \textbf{Research Area} & \textbf{Main Focus} & \textbf{Relevance to Proposed System} \\ \hline
+\endfirsthead
+\multicolumn{4}{c}{\tablename\ \thetable{} -- \emph{continued from previous page}}\\ \hline
+\textbf{No.} & \textbf{Research Area} & \textbf{Main Focus} & \textbf{Relevance to Proposed System} \\ \hline
+\endhead
+\hline \multicolumn{4}{r}{\emph{Continued on next page}}\\
+\endfoot
+\hline
+\endlastfoot
+1 & Deep Reinforcement Learning & Dynamic portfolio allocation and regret-based reward & Recommendation Engine and Dynamic Allocation \\ \hline
+2 & Robo-Advisory & AI-based personal financial management & Personalized financial recommendations \\ \hline
+3 & AI in Wealth Management & AI applications in financial services & AI-assisted financial planning \\ \hline
+4 & Reinforcement Learning & Automated financial decision-making & Sequential allocation decisions \\ \hline
+5 & Risk-Aware Portfolio Optimization & DRL-based portfolio management & Risk-aware recommendations \\ \hline
+6 & LLM-Based Finance & Financial forecasting and strategy optimization & Future AI-based recommendation enhancement \\ \hline
+7 & Crisis-Aware DRL & Adaptation to financial crisis patterns & Future dynamic risk adaptation \\ \hline
+8 & SIP Investment & Periodic investment by retail investors & SIP calculation module \\ \hline
+9 & AI Financial Planning & AI-assisted personal financial advisory & Overall system design \\ \hline
+10 & Inflation Forecasting & Machine learning based inflation prediction & Future goal amount calculation \\ \hline
+11 & Deep Learning & GAF, ResNet and LSTM for asset selection & Future market prediction module \\ \hline
+12 & Hybrid LSTM-PPO & Prediction combined with reinforcement learning & Future recommendation engine \\ \hline
+13 & Financial Forecasting & ML-based budget forecasting & Financial requirement estimation \\ \hline
+14 & Knowledge Graph & Behaviourally aligned financial recommendations & Future personalized recommendation \\ \hline
+15 & Risk-Aware DRL & Risk-sensitive dynamic allocation & Dynamic risk-aware portfolio allocation \\ \hline
+16 & Investor Profiling & Robo-advisory and investor risk profiling & Risk Profiling module \\ \hline
+17 & Robo-Advisory & AI-based wealth management & Automated financial advisory \\ \hline
+18 & AI Ethics & Ethical issues in robo-advice & Responsible recommendation design \\ \hline
+19 & Sentiment-Aware DRL & Sentiment and CVaR based portfolio optimization & Future market-aware allocation \\ \hline
+20 & Simulated RL & Simulation and RL based asset allocation & Future testing and simulation \\ \hline
+\end{longtable}}
+
+\section{Overall Observation from Literature}
+The literature review shows that existing research has addressed many individual components required for intelligent financial decision-making. Deep Reinforcement Learning has been used for dynamic portfolio optimization, while robo-advisory research has focused on personalized investment services and investor profiling. Other studies have addressed financial forecasting, inflation, systematic investment, behavioural finance, uncertainty, sentiment, and ethical aspects of AI-based financial advice.
+
+However, these research directions are often considered separately. A financial planning system intended for individual users requires multiple components to work together. In particular, the financial goal, target amount, time horizon, savings capacity, risk profile, and investment recommendation should be connected.
+
+The literature therefore indicates the need for an integrated goal-oriented framework that combines financial calculation, feasibility assessment, risk profiling, personalized recommendation, and dynamic allocation.
+
+The proposed Financial Goal Planner addresses this requirement by combining these components into a single system. The system begins with a user's financial goal and calculates the future financial requirement. It then evaluates feasibility, determines the user's risk profile, generates an investment recommendation, and adjusts the allocation according to the remaining goal horizon.
+
+The Recommendation Engine is conceptually inspired by the regret-aware and future-looking reward approach of the base paper. The base paper specifically uses PPO, a regret-based Sharpe reward, future-looking information during training, synthetic data generation, and transaction-cost scheduling for dynamic portfolio rebalancing. These ideas provide the main technical foundation for the proposed recommendation and allocation approach.
+
+The proposed project differs in its application objective. Rather than concentrating only on enhancing a general portfolio strategy, the proposed system is designed around an individual financial goal. Therefore, the investment recommendation is expected to be dependent on both financial-market considerations and user-specific goal characteristics.

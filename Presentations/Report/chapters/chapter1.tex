@@ -1,0 +1,63 @@
+%%********************Chapter 1**********
+\chapter[\uppercase{Introduction}]{\uppercase{Introduction}}
+
+\section{Background}
+Financial planning is an important part of achieving long-term financial goals such as higher education, retirement, vehicle purchase, or other planned expenses. However, individuals may find it difficult to determine how much they need to save, how long they need to invest, and what level of investment risk is suitable for a particular goal.
+
+The financial requirement of a goal depends on several factors, including the target amount, investment horizon, expected returns, inflation, and the amount that an individual can regularly save. Therefore, a financial plan that is suitable for one goal may not be appropriate for another goal with a different time horizon or financial requirement.
+
+Traditional goal-based investment planning generally uses predefined investment categories or fixed allocation strategies. Such approaches may not adequately consider changes in the user's financial situation, the remaining time to achieve the goal, or the need to gradually modify the investment allocation as the goal approaches.
+
+Artificial Intelligence (AI), Machine Learning (ML), and Deep Reinforcement Learning (DRL) provide opportunities for developing adaptive financial planning and recommendation systems. Reinforcement Learning can learn suitable actions based on the current state and the expected future outcomes. This makes it relevant to investment allocation problems where decisions may need to be adjusted over time.
+
+The proposed project applies these concepts to develop a goal-based investment planning system that combines financial calculation, feasibility assessment, risk profiling, and adaptive investment recommendation.
+
+\section{Project Overview}
+The proposed project is a mobile-first Financial Goal Planner that helps users plan investments according to their specific financial goals. The system accepts goal-related and financial information from the user and uses this information to determine the financial requirements of the goal.
+
+The system considers factors such as the target amount, time horizon, available savings, expected returns, and risk profile. Based on these inputs, the system is designed to calculate the required savings or periodic investment and assess whether the selected goal is financially feasible.
+
+The project also includes a Risk Profiling module that considers the user's risk tolerance and risk capacity. The resulting risk profile is used together with the goal horizon to support the generation of personalized investment recommendations.
+
+The Recommendation Engine is inspired by the base paper, \emph{Regret-Optimized Portfolio Enhancement through Deep Reinforcement Learning and Future Looking Rewards}. The base paper uses Deep Reinforcement Learning with a regret-based and future-looking reward formulation for portfolio enhancement.
+
+In the proposed project, these concepts are adapted to a goal-oriented investment planning context. Instead of considering portfolio performance alone, the system is designed around the user's financial goal, investment horizon, and risk profile.
+
+The system also includes Dynamic Allocation. The recommended asset allocation can be adjusted according to the remaining time to the goal. As the goal approaches, the system can consider a more conservative allocation according to the user's risk profile and goal requirements.
+
+The complete system is developed as a group project with the following major technical contribution areas:
+\begin{itemize}
+	\item Mobile Application and User Interface.
+	\item Financial Calculation and Safety/Feasibility Calculator.
+	\item Risk Profiling.
+	\item Recommendation Engine and Dynamic Allocation.
+\end{itemize}
+These modules are interconnected to provide an overall workflow from goal creation and financial assessment to risk profiling and investment recommendation.
+
+\section{Motivation}
+Planning investments for a specific financial goal involves more than selecting an investment product. The user must first understand the amount required for the goal, the time available to achieve it, the amount that can be invested periodically, and the level of risk that can be accepted.
+
+A major motivation for the proposed system is to bring these activities together within a single application. Instead of treating financial calculation, risk assessment, and investment recommendation as separate activities, the proposed system integrates them into one goal-based workflow.
+
+The time horizon of a financial goal is particularly important in investment planning. A user with a long-term goal may have more time to accommodate changes in investment value, whereas a user approaching the goal deadline has less time to recover from unfavourable market movements. Therefore, the investment allocation should be considered in relation to the remaining goal horizon.
+
+Another motivation is the application of AI and Deep Reinforcement Learning concepts to personalized financial recommendation. The base paper demonstrates the use of regret-based and future-looking reward concepts for portfolio enhancement. The proposed project explores how these concepts can be adapted to a goal-based setting, where the recommendation is influenced not only by portfolio performance but also by the user's goal and remaining investment period.
+
+Thus, the project aims to develop a system that combines financial planning, feasibility assessment, risk profiling, and adaptive investment recommendation in a single mobile-first application.
+
+\section{Scope of Phase 1}
+Phase~1 establishes the foundation for the development of the proposed Financial Goal Planner. The main focus of this phase is understanding the problem, studying existing research, identifying the research gap, and planning the proposed system.
+
+The first activity of Phase~1 was the detailed study of the base paper, \emph{Regret-Optimized Portfolio Enhancement through Deep Reinforcement Learning and Future Looking Rewards}. The study helped in understanding the use of Deep Reinforcement Learning, regret-based rewards, and future-looking rewards in portfolio enhancement.
+
+A literature review was then carried out to study existing work related to AI-based financial planning, robo-advisors, investor profiling, reinforcement learning for portfolio optimization, risk-aware investment, and goal-based financial planning. The review was used to identify limitations in existing approaches and to formulate the research gap for the proposed project.
+
+Based on the literature study, the project problem statement and objectives were defined. The system requirements and major modules were also identified. The proposed architecture was planned to connect the mobile application with the financial calculation, feasibility, risk profiling, recommendation, and dynamic allocation modules.
+
+The financial calculation component was planned to determine the financial requirements associated with a goal, including the required future amount and periodic investment. The Safety and Feasibility Calculator was planned to assess whether the selected goal is practically achievable based on the available financial information.
+
+The Risk Profiling module was planned to assess the user's risk tolerance and risk capacity. The Recommendation Engine was planned to use the goal information, time horizon, and risk profile to generate personalized investment recommendations.
+
+The Dynamic Allocation component was planned to modify the asset allocation according to the remaining goal horizon. The overall mobile application and dashboard were also planned to present the goal information, financial calculations, risk profile, recommendations, and progress in a user-friendly manner.
+
+Therefore, Phase~1 mainly focuses on research, analysis, system planning, and module-level design. The implementation and detailed evaluation of the proposed system are considered as subsequent phases of the project.

@@ -1,0 +1,135 @@
+%%********************Chapter 5**********
+\chapter{\uppercase{Phase 1 Methodology and Work Completed}}
+
+\section{Phase 1 Methodology}
+Phase~1 was conducted as a collaborative group activity focused on understanding the problem domain, studying existing research, and designing the proposed Financial Goal Planner system. The group initially studied the base paper, ``Regret-Optimized Portfolio Enhancement through Deep Reinforcement Learning and Future Looking Rewards'', to understand its approach to portfolio optimization, regret-based reward formulation, and future-looking rewards. The group examined how these concepts could be adapted from general portfolio optimization to a goal-based investment planning environment.
+
+Following the study of the base paper, an extensive literature review was conducted to understand existing approaches related to Reinforcement Learning, Deep Reinforcement Learning, portfolio optimization, robo-advisory, personal financial planning, investor profiling, risk-aware investment, and Artificial Intelligence. The review helped the group understand the existing solutions, commonly used techniques, and limitations of current financial planning and investment recommendation systems.
+
+Based on the findings from the literature review, the group identified the research gap addressed by the proposed system. The research gap was mainly focused on the need for a goal-oriented financial planning system that combines financial calculations, feasibility assessment, risk profiling, personalized investment recommendations, and dynamic asset allocation according to the user's goal horizon.
+
+The problem statement was then formulated to clearly define the limitations of existing approaches and the need for an integrated goal-based and risk-aware financial planning system.
+
+The group subsequently defined the major objectives of the project. The objectives were formulated to cover financial goal management, financial calculations, safety and feasibility assessment, risk profiling, personalized investment recommendation, and dynamic asset allocation.
+
+The system requirements were then identified based on the proposed objectives. Functional and non-functional requirements were considered along with the required software, hardware, and system-level components. The major modules of the proposed system were also identified and their responsibilities were defined.
+
+The proposed system architecture was designed to represent the flow of information between the mobile application, financial calculation modules, safety and feasibility calculator, risk profiling, recommendation engine, dynamic allocation module, and dashboard. The architecture was designed to provide a clear understanding of how user inputs are processed to generate personalized investment recommendations.
+
+Finally, the group prepared the planned development workflow for the subsequent phases of the project. The planned work includes detailed system design, mobile application development, financial calculation implementation, risk profiling, recommendation engine development, dynamic allocation, backend and database integration, model development and evaluation, testing, and final documentation.
+
+Thus, Phase~1 established the theoretical foundation, research direction, system requirements, architecture, major modules, and development plan required for the subsequent implementation phases.
+
+\begin{table}[h!]
+	\centering
+	\caption{Major Inputs and Outputs of the System}
+	\label{tab:io}
+	\vspace*{5pt}
+	{\singlespacing\small
+	\begin{tabular}{|p{5.5cm}|p{7.5cm}|}
+		\hline
+		\textbf{Input} & \textbf{Output} \\ \hline
+		Goal type & Selected financial goal \\ \hline
+		Target amount & Required future goal amount \\ \hline
+		Time horizon & Goal-based investment period \\ \hline
+		Financial situation & Risk capacity assessment \\ \hline
+		Risk tolerance & Risk profile \\ \hline
+		Savings capacity & Required SIP contribution and feasibility status \\ \hline
+		Risk profile and goal horizon & Recommended asset allocation \\ \hline
+	\end{tabular}}
+\end{table}
+
+\section{Literature Study}
+The literature study covered 24 related research works and the base paper.
+
+The reviewed literature was analysed with respect to:
+\begin{itemize}
+	\item Reinforcement Learning.
+	\item Deep Reinforcement Learning.
+	\item Portfolio optimization.
+	\item Risk-aware investment.
+	\item Robo-advisory.
+	\item Investor profiling.
+	\item Financial planning.
+	\item Inflation forecasting.
+	\item Behavioural finance.
+	\item AI-based recommendations.
+	\item Digital investment management.
+\end{itemize}
+The literature review helped the group identify the research gap and define the proposed system.
+
+\section{Financial Calculation and Feasibility Work}
+The Financial Calculation component focuses on estimating the financial requirements associated with achieving a selected goal.
+
+The system considers:
+\begin{itemize}
+	\item Current goal amount.
+	\item Inflation rate.
+	\item Future goal amount.
+	\item Investment horizon.
+	\item Expected investment return.
+	\item Required monthly contribution.
+	\item Available monthly savings.
+\end{itemize}
+The Safety and Feasibility Calculator uses these values to provide an initial assessment of whether the selected goal is financially feasible.
+
+This module forms an important input to the later recommendation process.
+
+\section{Planned Recommendation Workflow}
+The planned workflow of the proposed system is:
+\begin{enumerate}
+	\item User enters financial goal details.
+	\item System determines the goal horizon and target amount.
+	\item Inflation-adjusted goal value is calculated.
+	\item Required savings or SIP contribution is calculated.
+	\item Safety and Feasibility Calculator evaluates the goal.
+	\item Risk Profiling module evaluates the user's risk tolerance and risk capacity.
+	\item Recommendation Engine processes the goal horizon and risk information.
+	\item Initial asset allocation is generated.
+	\item Dynamic Allocation adjusts the recommendation as the goal deadline approaches.
+	\item Dashboard displays goal progress and recommendation details.
+\end{enumerate}
+
+\section{Individual Contributions}
+The project is a collaborative group project consisting of four members. Each member has a specific technical contribution while all members jointly participate in the overall project development, literature study, documentation, and system planning.
+
+\begin{table}[h!]
+	\centering
+	\caption{Individual Contributions}
+	\label{tab:contrib}
+	\vspace*{5pt}
+	{\singlespacing\small
+	\begin{tabular}{|p{4cm}|p{8cm}|}
+		\hline
+		\textbf{Member} & \textbf{Assigned Contribution} \\ \hline
+		Amarthya Regimon Joseph & Mobile Application and User Interface \\ \hline
+		Aswin P & Financial Calculation and Safety/Feasibility Calculator \\ \hline
+		Athira Raj & Risk Profiling \\ \hline
+		Haleema S & Recommendation Engine and Dynamic Allocation \\ \hline
+	\end{tabular}}
+\end{table}
+
+\begin{itemize}
+	\item \textbf{Amarthya Regimon Joseph:} Responsible for the Mobile Application and User Interface development. The contribution includes planning the mobile-first interface, screen structure, navigation flow, user interaction, and presentation of financial goals, goal progress, feasibility status, and investment recommendations.
+	\item \textbf{Aswin P:} Responsible for the Financial Calculation and Safety/Feasibility Calculator modules. The contribution includes planning the calculation of future goal amounts, inflation-adjusted target amounts, required savings, SIP contributions, expected returns, and preliminary feasibility assessment of the selected financial goal.
+	\item \textbf{Athira Raj:} Responsible for the Risk Profiling module. The contribution includes planning the assessment of user risk tolerance and risk capacity using financial, personal, and goal-related information. The module is intended to provide a suitable risk profile for use by the recommendation system.
+	\item \textbf{Haleema S:} Responsible for the Recommendation Engine and Dynamic Allocation modules. The contribution includes planning the recommendation mechanism inspired by the regret-optimized and future-looking reward formulation of the base paper. The dynamic allocation component considers the user's risk profile and remaining goal horizon to adjust the recommended asset allocation.
+\end{itemize}
+All four members jointly contributed to the literature review, research gap identification, problem statement, objectives, requirements analysis, proposed system architecture, Phase~1 methodology, documentation, and overall project planning.
+
+\section{Planned Development Schedule}
+The subsequent development phases are planned to progressively transform the Phase~1 design into a functional Financial Goal Planner. The planned activities include the following:
+\begin{enumerate}
+	\item Detailed system design and database design.
+	\item Development of the mobile application and user interface.
+	\item Implementation of financial calculations, including future goal amount, inflation adjustment, required savings, and SIP contribution calculations.
+	\item Implementation of the Safety and Feasibility Calculator to assess the practical achievability of the selected financial goal.
+	\item Development of the Risk Profiling module for assessing user risk tolerance and risk capacity.
+	\item Development of the Recommendation Engine for generating goal-based and risk-aware investment recommendations.
+	\item Implementation of the Dynamic Allocation module to adjust asset allocation according to the remaining goal horizon.
+	\item Backend and database integration with the mobile application.
+	\item Model development, training, and evaluation for the planned AI/ML and reinforcement-learning components.
+	\item Integration testing of the individual modules.
+	\item Mobile application testing, system testing, and performance evaluation.
+	\item Final documentation, result analysis, and project demonstration.
+\end{enumerate}
