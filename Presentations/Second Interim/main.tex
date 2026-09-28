@@ -528,6 +528,39 @@ Individuals planning for financial goals -- such as retirement, a child's educat
 \medskip
 \end{frame}
 
+% ================= RESOURCES AND ESTIMATION =================
+\section{Resources and Estimation}
+
+\begin{frame}{Resource Requirements}
+\small
+\begin{itemize}
+    \item \textbf{Human Resources:} 4 team members (UI/UX, risk profiling, AI recommendation, financial computation) under faculty guidance.
+    \item \textbf{Hardware:} Team laptops (8--16 GB RAM) and personal Android devices for testing; optional free GPU notebooks (Kaggle/Colab) for PPO training.
+    \item \textbf{Software (all free/open-source):} Flutter, Python, FastAPI, PyTorch, Stable-Baselines3, Git/GitHub.
+    \item \textbf{Cloud Services:} Supabase (Postgres, Auth) and Render for FastAPI hosting -- both on free tiers.
+    \item \textbf{Data:} Free AMFI-sourced mutual fund NAV data via MFapi.in (no API key required).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Cost Estimation}
+\tiny
+\centering
+\begin{tabular}{p{3cm} p{4.2cm} p{1.4cm} p{1.4cm}}
+    \toprule
+    \textbf{Item} & \textbf{Plan / Basis} & \textbf{Baseline} & \textbf{Recommended} \\
+    \midrule
+    Database (Supabase) & Free: 500 MB, 50K MAU & 0 & 0 \\
+    Backend hosting (Render) & Free tier; Starter \$7/mo $\times$ 3 months for demo & 0 & 1,800 \\
+    RL training compute & Kaggle free; Colab Pro \$9.99/mo $\times$ 3 months & 0 & 2,500 \\
+    Market data (MFapi.in) & Free, rate-limited (cache) & 0 & 0 \\
+    Play Console & One-time \$25 (optional; APK for demo) & 0 & 2,100 \\
+    Development tools & Open-source & 0 & 0 \\
+    \midrule
+    \textbf{Total (INR)} & & \textbf{0} & \textbf{$\approx$ 6,400} \\
+    \bottomrule
+\end{tabular}
+\end{frame}
+
 \section{Requirements}
 \begin{frame}{Functional Requirements}
 

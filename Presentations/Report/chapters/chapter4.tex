@@ -126,17 +126,43 @@ The Dynamic Allocation module adjusts the recommended asset allocation according
 \end{table}
 
 \subsection{Data Flow Diagram}
-The Data Flow Diagram (DFD) represents the flow of information between the user and the major modules of the proposed system. It shows how the user's financial and goal-related information is processed to generate the final investment recommendation.
+The Data Flow Diagram (DFD) represents the flow of information between the user, the external data sources and the major modules of the proposed system. It shows how the user's financial and goal-related information is processed to generate the final investment recommendation. The system is presented at two levels: Level 0 (context diagram) and Level 1 (module-level decomposition).
 
-% Place the DFD image at figures/level_1.png. If the file is missing, a
-% placeholder box is printed instead so the document still compiles.
+\subsubsection{Level 0 DFD (Context Diagram)}
+The Level 0 DFD shows the Financial Goal Planner as a single process and describes its interaction with external entities. The \textbf{User} provides goal details (target amount, time horizon) and risk-profile responses, and receives the inflation-adjusted goal amount, required SIP contribution, recommended asset allocation and portfolio adjustment alerts. The \textbf{Market Data Source} (mutual fund NAV data) supplies the historical and latest market data used for growth estimation and allocation.
+
+% Place the Level 0 DFD image at figures/level_0.png. If the file is missing,
+% a placeholder box is printed instead so the document still compiles.
 \begin{figure}[h!]
-	\centering
-	\IfFileExists{figures/level_1.png}{%
-		\includegraphics[width=0.95\linewidth]{figures/level_1.png}%
-	}{%
-		\fbox{\parbox[c][7cm][c]{0.9\linewidth}{\centering DFD Level 1 --- add \texttt{figures/level\_1.png}}}%
-	}
-	\caption{Data Flow Diagram Level 1}
-	\label{fig:dfd}
+\centering
+\IfFileExists{figures/level_0.png}{%
+\includegraphics[width=0.95\linewidth]{figures/level_0.png}%
+    }{%
+\fbox{\parbox[c][7cm][c]{0.9\linewidth}{\centering DFD Level 0 --- add \texttt{figures/level\_0.png}}}%
+    }
+\caption{Data Flow Diagram Level 0 (Context Diagram)}
+\label{fig:dfd0}
+\end{figure}
+
+\subsubsection{Level 1 DFD}
+The Level 1 DFD decomposes the system into its four major modules and shows the data exchanged between them and the central database:
+\begin{itemize}
+    \item \textbf{Mobile Application \& UI/UX:} Accepts goal details from the user, displays the dashboard and presents recommendations.
+    \item \textbf{Risk Profiling \& User Modelling:} Processes the questionnaire responses to assess risk tolerance and risk capacity, and outputs the user's risk class and financial profile.
+    \item \textbf{Financial Forecasting \& Computation:} Computes the inflation-adjusted goal amount, required SIP contribution, expected investment growth and goal feasibility using processed market data.
+    \item \textbf{AI Recommendation \& Portfolio Allocation:} Takes the risk profile, goal parameters and forecast results to generate the asset allocation across mutual funds, equity and debt instruments, and to adjust it as the remaining horizon shrinks.
+\end{itemize}
+User and goal data and generated recommendations are stored in and retrieved from the database, so that the dashboard can track goal progress over time.
+
+% Place the Level 1 DFD image at figures/level_1.png. If the file is missing,
+% a placeholder box is printed instead so the document still compiles.
+\begin{figure}[h!]
+\centering
+\IfFileExists{figures/level_1.png}{%
+\includegraphics[width=0.95\linewidth]{figures/level_1.png}%
+    }{%
+\fbox{\parbox[c][7cm][c]{0.9\linewidth}{\centering DFD Level 1 --- add \texttt{figures/level\_1.png}}}%
+    }
+\caption{Data Flow Diagram Level 1}
+\label{fig:dfd1}
 \end{figure}
