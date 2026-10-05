@@ -12,64 +12,205 @@ The main objectives of the proposed project are:
 
 \section{System Requirements}
 
+The system requirements define the functional and non-functional
+capabilities required for the proposed Financial Goal Planner. The
+requirements are identified based on the objectives of the project and
+the planned workflow of the system. They describe the major functions
+that the system is expected to provide and the quality characteristics
+that should be maintained during implementation.
+
 \begin{table}[h!]
-	\centering
-	\caption{Functional Requirements of the Proposed System}
-	\label{tab:funcreq}
-	\vspace*{5pt}
-	{\singlespacing\small
-	\begin{tabular}{|c|p{4cm}|p{6.5cm}|}
-		\hline
-		\textbf{No.} & \textbf{Requirement} & \textbf{Description} \\ \hline
-		1 & Goal Creation & User can create a financial goal with target amount and time horizon. \\ \hline
-		2 & Financial Calculation & System calculates required savings and periodic investment. \\ \hline
-		3 & Risk Profiling & System evaluates user risk tolerance and risk capacity. \\ \hline
-		4 & Feasibility Assessment & System checks whether the selected goal is financially achievable. \\ \hline
-		5 & Investment Recommendation & System provides personalized investment allocation recommendations. \\ \hline
-		6 & Dynamic Allocation & System adjusts allocation based on remaining goal horizon. \\ \hline
-		7 & Progress Tracking & User can monitor goal progress through the mobile dashboard. \\ \hline
-	\end{tabular}}
+    \centering
+    \caption{Functional Requirements of the Proposed System}
+    \label{tab:funcreq}
+    \vspace*{5pt}
+
+    {\singlespacing\small
+    \begin{tabular}{|c|p{4cm}|p{6.5cm}|}
+        \hline
+        \textbf{No.} & \textbf{Requirement} & \textbf{Description} \\
+        \hline
+
+        1 & Goal Creation &
+        The user can create and manage a financial goal by providing
+        the goal type, target amount, and investment time horizon. \\
+        \hline
+
+        2 & Financial Calculation &
+        The system calculates the future financial requirement,
+        required savings, and periodic investment contribution based
+        on the selected goal and investment period. \\
+        \hline
+
+        3 & Risk Profiling &
+        The system evaluates the user's risk-related information to
+        determine risk tolerance, risk capacity, and an appropriate
+        risk profile. \\
+        \hline
+
+        4 & Feasibility Assessment &
+        The system evaluates whether the selected financial goal is
+        practically achievable based on the user's financial
+        condition and required investment contribution. \\
+        \hline
+
+        5 & Investment Recommendation &
+        The system provides a personalized investment recommendation
+        based on the user's financial goal, investment horizon, and
+        risk profile. \\
+        \hline
+
+        6 & Dynamic Allocation &
+        The system adjusts the recommended asset allocation according
+        to the remaining goal horizon and the user's risk
+        characteristics. \\
+        \hline
+
+        7 & Progress Tracking &
+        The user can monitor the progress of the financial goal,
+        including the investment requirement and relevant planning
+        information, through the mobile dashboard. \\
+        \hline
+
+    \end{tabular}}
 \end{table}
 
 \subsection{Functional Requirements}
-The proposed system shall provide the following functional capabilities:
+
+The proposed system shall provide the following functional
+capabilities:
+
 \begin{itemize}
-	\item User profile management.
-	\item Financial goal creation and management.
-	\item Goal amount and deadline input.
-	\item Inflation-adjusted goal calculation.
-	\item SIP calculation.
-	\item Safety and feasibility assessment.
-	\item Risk profiling.
-	\item Personalized investment recommendation.
-	\item Dynamic asset allocation.
-	\item Goal progress tracking.
-	\item Mobile dashboard.
+
+    \item \textbf{User Profile Management:}
+    The system shall allow users to provide and manage relevant
+    financial and personal information required for financial
+    planning and risk assessment.
+
+    \item \textbf{Financial Goal Creation and Management:}
+    The system shall allow users to create a financial goal and
+    specify the required target amount, goal type, and investment
+    horizon.
+
+    \item \textbf{Goal Amount and Deadline Input:}
+    The user shall be able to enter the target amount and expected
+    deadline of the financial goal. These values shall be used by
+    subsequent financial calculations.
+
+    \item \textbf{Inflation-Adjusted Goal Calculation:}
+    The system shall consider the effect of inflation while estimating
+    the future financial requirement of the selected goal.
+
+    \item \textbf{SIP Calculation:}
+    The system shall calculate the periodic investment contribution
+    required to achieve the selected financial goal based on the
+    estimated future requirement and investment period.
+
+    \item \textbf{Safety and Feasibility Assessment:}
+    The system shall evaluate whether the selected goal is practically
+    achievable based on the user's financial condition, available
+    savings capacity, and required contribution.
+
+    \item \textbf{Risk Profiling:}
+    The system shall collect risk-related information through the
+    planned risk assessment process and evaluate the user's risk
+    tolerance and risk capacity.
+
+    \item \textbf{Personalized Investment Recommendation:}
+    The system shall generate an investment recommendation by
+    considering the user's financial goal, investment horizon,
+    financial information, and risk profile.
+
+    \item \textbf{Dynamic Asset Allocation:}
+    The system shall support adjustment of the recommended asset
+    allocation according to the remaining investment horizon and the
+    user's risk characteristics.
+
+    \item \textbf{Goal Progress Tracking:}
+    The system shall allow users to monitor the progress of their
+    financial goals and view relevant planning information.
+
+    \item \textbf{Mobile Dashboard:}
+    The system shall provide a dashboard through the mobile
+    application for presenting goal progress, feasibility status,
+    risk profile, and investment recommendation information.
+
 \end{itemize}
 
 \subsection{Non-Functional Requirements}
+
 The system should satisfy the following non-functional requirements:
+
 \begin{itemize}
-	\item Usability.
-	\item Reliability.
-	\item Security.
-	\item Maintainability.
-	\item Scalability.
-	\item Performance.
-	\item Responsiveness.
+
+    \item \textbf{Usability:}
+    The system should provide a simple and understandable user
+    interface so that users can enter financial information and
+    understand the generated planning results easily.
+
+    \item \textbf{Reliability:}
+    The system should provide consistent results for valid user
+    inputs and should handle invalid or incomplete inputs
+    appropriately.
+
+    \item \textbf{Security:}
+    The system should protect user financial and personal information
+    and restrict access to sensitive data.
+
+    \item \textbf{Maintainability:}
+    The system should be designed in a modular manner so that
+    individual components can be modified, tested, and improved
+    without significantly affecting other modules.
+
+    \item \textbf{Scalability:}
+    The planned system architecture should support the addition of
+    new goals, financial calculations, recommendation methods, and
+    other functionalities in future development phases.
+
+    \item \textbf{Performance:}
+    The system should process user inputs and generate calculations
+    and recommendation results within a reasonable response time.
+
+    \item \textbf{Responsiveness:}
+    The mobile application should respond appropriately to user
+    interactions and should present the generated financial planning
+    information clearly.
+
 \end{itemize}
 
 \subsection{Software Requirements}
-The planned software environment includes:
-\begin{itemize}
-	\item Mobile application development framework.
-	\item Backend and API services.
-	\item Database system.
-	\item Python-based machine-learning environment.
-	\item Reinforcement Learning libraries.
-	\item Development and testing tools.
-\end{itemize}
 
+The planned software environment includes the following components:
+
+\begin{itemize}
+
+    \item \textbf{Mobile Application Development Framework:}
+    Required for developing the mobile application, user interface,
+    dashboard, and user interaction components.
+
+    \item \textbf{Backend and API Services:}
+    Required for handling application logic, communication between
+    the mobile application and backend components, and integration
+    with required external services.
+
+    \item \textbf{Database System:}
+    Required for storing relevant user profile information, financial
+    goals, portfolio-related information, and other required system
+    data.
+
+    \item \textbf{Python-Based Machine-Learning Environment:}
+    Planned for implementing and evaluating the machine-learning and
+    data-processing components of the proposed system.
+
+    \item \textbf{Reinforcement Learning Libraries:}
+    Required for the planned development and evaluation of the
+    reinforcement-learning component of the Recommendation Engine.
+
+    \item \textbf{Development and Testing Tools:}
+    Required for coding, debugging, testing, version control, and
+    integration of the different system modules.
+
+\end{itemize}
 \section{Proposed System Architecture}
 The proposed system architecture illustrates the overall workflow of the Financial Goal Planner and the interaction between its major modules. The system collects the user's financial goal, target amount, investment horizon, savings capacity, and risk-related information through the mobile application.
 
