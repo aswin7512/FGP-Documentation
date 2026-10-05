@@ -206,6 +206,30 @@ final presentation.
     \label{fig:process_diagram}
 
 \end{figure}
+\subsection{Use Case Diagram}
+
+The Use Case Diagram represents the interaction between the user and
+the major functions of the proposed Financial Goal Planner. It
+identifies the main activities that can be performed by the user
+through the system.
+
+The user provides the required financial and risk-related information
+through the system. The Risk Profiling and User Modelling component
+collects the user's responses through a risk questionnaire and
+evaluates the user's risk tolerance and risk capacity. Based on these
+factors, the system classifies the user's risk profile.
+
+The user can view the resulting risk profile and can update the
+financial profile whenever the relevant financial information changes.
+The resulting risk profile is later used by the Recommendation Engine
+to generate a personalized investment recommendation.
+
+\begin{figure}[H]
+    \centering
+	\includegraphics[width=0.95\linewidth]{figures/usecase_diagram.png}
+    \caption{Use Case Diagram of the Risk Profiling and User Modelling Module}
+    \label{fig:usecase_diagram}
+\end{figure}
 
 \section{Major Modules}
 The proposed system consists of the following major modules, which work together to provide goal-based and risk-aware investment planning.
