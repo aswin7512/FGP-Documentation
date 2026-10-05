@@ -41,6 +41,7 @@
 # Output files (Remove *.pdf if you WANT to track the final output)
 *.dvi
 *.ps
+*.pdf
 
 # Editor/OS specific
 .DS_Store
