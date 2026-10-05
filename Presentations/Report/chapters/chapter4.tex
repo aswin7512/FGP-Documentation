@@ -85,6 +85,127 @@ The Dynamic Allocation Module adjusts the recommended allocation according to th
 \end{figure}
 
 The proposed architecture is inspired by the base paper, ``Regret-Optimized Portfolio Enhancement through Deep Reinforcement Learning and Future Looking Rewards''. The proposed system adapts the regret-aware and future-looking portfolio concepts to a goal-based financial planning environment by considering the financial goal, feasibility, risk profile, and remaining investment horizon.
+\subsection{Process Diagram}
+
+The process diagram illustrates the overall sequence of operations
+performed by the proposed Financial Goal Planner. It represents how
+the user's goal, financial information, and risk-related information
+are processed through the different modules to generate a
+personalized investment recommendation.
+
+The process begins when the user provides the required goal,
+financial, and risk-related information through the mobile
+application. The Goal Management module processes the goal-related
+information such as the target amount and investment horizon.
+
+After goal information is processed, the system performs two major
+activities. The Financial Calculation module calculates the
+financial requirements of the selected goal, including inflation
+adjustment, required savings, and SIP contribution. At the same time,
+the Risk Profiling module analyses the user's risk-related
+information to determine risk tolerance and risk capacity.
+
+The output of the Financial Calculation module is provided to the
+Safety and Feasibility Calculator, which evaluates whether the
+selected financial goal is practically achievable based on the
+user's financial capacity. The outputs from the feasibility
+assessment and Risk Profiling module are then combined with the
+financial and goal-related information.
+
+These inputs are provided to the Recommendation Engine, which
+generates a personalized investment recommendation based on the
+user's financial goal, financial condition, risk profile, and
+investment horizon. The Dynamic Allocation module subsequently
+adjusts the recommended asset allocation according to the remaining
+goal horizon and the user's risk characteristics.
+
+Finally, the Dashboard presents the processed information to the
+user, including the goal progress, required investment, feasibility
+status, risk profile, and recommended asset allocation.
+
+Thus, the process diagram provides a clear representation of the
+overall workflow of the proposed Financial Goal Planner, from user
+input to financial analysis, risk assessment, recommendation, and
+final presentation.
+
+\begin{figure}[H]
+    \centering
+
+    \begin{tikzpicture}[
+        box/.style={
+            rectangle,
+            rounded corners,
+            draw,
+            thick,
+            align=center,
+            minimum width=3.8cm,
+            minimum height=0.75cm,
+            font=\scriptsize
+        },
+        arrow/.style={
+            -{Latex[length=2mm]},
+            thick
+        }
+    ]
+
+    % Main flow
+    \node[box] (user) at (0,0)
+        {USER INPUT\\
+        Goal + Financial + Risk Information};
+
+    \node[box] (goal) at (0,-1.35)
+        {GOAL MANAGEMENT\\
+        Goal Amount + Investment Horizon};
+
+    % Parallel modules
+    \node[box] (financial) at (-2.4,-2.8)
+        {FINANCIAL CALCULATION\\
+        Inflation + SIP + Required Investment};
+
+    \node[box] (risk) at (2.4,-2.8)
+        {RISK PROFILING\\
+        Risk Tolerance + Risk Capacity};
+
+    % Safety
+    \node[box] (safety) at (-2.4,-4.25)
+        {SAFETY \& FEASIBILITY\\
+        Goal Achievability};
+
+    % Recommendation
+    \node[box] (recommend) at (0,-5.7)
+        {RECOMMENDATION ENGINE\\
+        Personalized Investment Recommendation};
+
+    % Dynamic allocation
+    \node[box] (dynamic) at (0,-7.15)
+        {DYNAMIC ALLOCATION\\
+        Horizon-based Allocation Adjustment};
+
+    % Dashboard
+    \node[box] (dashboard) at (0,-8.6)
+        {DASHBOARD\\
+        Goal Progress + Feasibility + Risk + Recommendation};
+
+    % Arrows
+    \draw[arrow] (user) -- (goal);
+
+    \draw[arrow] (goal.south) -- (financial.north);
+    \draw[arrow] (goal.south) -- (risk.north);
+
+    \draw[arrow] (financial.south) -- (safety.north);
+
+    \draw[arrow] (safety.south east) -- (recommend.north west);
+    \draw[arrow] (risk.south west) -- (recommend.north east);
+
+    \draw[arrow] (recommend) -- (dynamic);
+    \draw[arrow] (dynamic) -- (dashboard);
+
+    \end{tikzpicture}
+
+    \caption{Overall Process Flow of the Proposed Financial Goal Planner}
+    \label{fig:process_diagram}
+
+\end{figure}
 
 \section{Major Modules}
 The proposed system consists of the following major modules, which work together to provide goal-based and risk-aware investment planning.
