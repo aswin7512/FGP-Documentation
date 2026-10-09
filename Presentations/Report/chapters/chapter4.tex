@@ -412,7 +412,7 @@ The Dynamic Allocation module adjusts the recommended asset allocation according
 \end{table}
 
 \subsection{Data Flow Diagram}
-The Data Flow Diagram (DFD) represents the flow of information between the user, the external data sources and the major modules of the proposed system. It shows how the user's financial and goal-related information is processed to generate the final investment recommendation. The system is presented at two levels: Level 0 (context diagram) and Level 1 (module-level decomposition).
+The Data Flow Diagram (DFD) represents the flow of information between the user, the external data sources and the major modules of the proposed system. It shows how the user's financial and goal-related information is processed to generate the final investment recommendation. The system is presented at three levels: Level 0 (context diagram), Level 1 (module-level decomposition) and Level 2 (detailed decomposition of each module).
 
 \subsubsection{Level 0 DFD (Context Diagram)}
 The Level 0 DFD shows the Financial Goal Planner as a single process and describes its interaction with external entities. The \textbf{User} provides goal details (target amount, time horizon) and risk-profile responses, and receives the inflation-adjusted goal amount, required SIP contribution, recommended asset allocation and portfolio adjustment alerts. The \textbf{Market Data Source} (mutual fund NAV data) supplies the historical and latest market data used for growth estimation and allocation.
@@ -451,4 +451,47 @@ User and goal data and generated recommendations are stored in and retrieved fro
     }
 \caption{Data Flow Diagram Level 1}
 \label{fig:dfd1}
+\end{figure}
+
+\subsubsection{Level 2 DFD}
+The Level 2 DFDs expand each of the four Level 1 processes into its internal sub-processes, showing the data exchanged with the external entities, the neighbouring modules and the central database (D1). The sub-process numbers follow the process numbers used in the Level 1 DFD.
+
+\paragraph{Module 1: Mobile Application \& UI/UX (Process 4.0).}
+The mobile application is decomposed into login and profile management (4.1), goal capture (4.2), dashboard (4.3), recommendation visualization (4.4) and the frontend--backend synchronization layer (4.5). The user enters profile and goal details through 4.1 and 4.2, and these are sent to the backend through 4.5. The results returned from the other processes and the database are shown to the user through the dashboard and the allocation charts.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{figures/Module1.png}
+    \caption{Level 2 DFD of Module 1: Mobile Application \& UI/UX}
+    \label{fig:dfd2_module1}
+\end{figure}
+
+\paragraph{Module 2: AI Recommendation \& Portfolio Allocation (Process 3.0).}
+The recommendation engine is decomposed into time-horizon analysis (3.1), PPO-based reward shaping (3.2), asset allocation (3.3), benchmark comparison (3.4) and dynamic rebalancing (3.5). The risk profile and the remaining horizon are analysed in 3.1. The reinforcement-learning agent in 3.2 uses the regret-based and future-looking reward, together with the required SIP from the forecasting module, to decide the allocation. The allocation across mutual funds, equity and debt is produced in 3.3 using market data and is compared with a 60/40 benchmark in 3.4. The rebalancing process 3.5 updates the allocation as the horizon shrinks and market conditions change. The final recommendation is stored in D1 and sent to the mobile application.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{figures/Module2.png}
+    \caption{Level 2 DFD of Module 2: AI Recommendation \& Portfolio Allocation}
+    \label{fig:dfd2_module2}
+\end{figure}
+
+\paragraph{Module 3: Risk Profiling \& User Modelling (Process 1.0).}
+The risk profiling module is decomposed into the risk questionnaire (1.1), risk tolerance assessment (1.2), risk capacity assessment (1.3), risk classification (1.4) and financial profile building (1.5). The questionnaire responses from the mobile application are used to assess the risk tolerance and the risk capacity separately. Both are combined in 1.4 to classify the user's risk profile. The risk class is returned to the application, passed to the recommendation engine, and stored in D1 along with the user's financial profile.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{figures/Module3.png}
+    \caption{Level 2 DFD of Module 3: Risk Profiling \& User Modelling}
+    \label{fig:dfd2_module3}
+\end{figure}
+
+\paragraph{Module 4: Financial Forecasting \& Financial Computation (Process 2.0).}
+The forecasting module is decomposed into goal inflation adjustment (2.1), market data processing (2.2), SIP calculation (2.3), growth projection (2.4) and feasibility check (2.5). The target amount and deadline from the application are first adjusted for inflation. The market data is processed into expected return and volatility estimates, which are used by the SIP calculation and the growth projection. The feasibility result is returned to the application so that the user can revise the plan. The required SIP and the expected growth are provided to the recommendation engine and stored in D1.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{figures/Module4.png}
+    \caption{Level 2 DFD of Module 4: Financial Forecasting \& Financial Computation}
+    \label{fig:dfd2_module4}
 \end{figure}
